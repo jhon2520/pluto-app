@@ -1,0 +1,110 @@
+:root{
+    --color-verde:#006E8C;
+    --color-morado:#6334E3;
+    --color-morado-oscuro:#46279b;
+    --h1-font-size: 50px;
+    --h2-font-size: 42px;
+    --h3-font-size:18px;
+    --p-font-size:16px;
+    --font-family:"poppins";
+    --color-ligth-gray:#789395;
+    --color-dark-gray:#525E75;
+    --heigth-button-1:35px;
+    --nav-bar-height:10vh
+}
+
+
+
+.nabvar_contianer{
+    /* background: red; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: var(--nav-bar-height);
+    font-family: var(--font-family);
+    padding: 0 60px;
+}
+
+.nabvar_contianer>img{
+    height: var(--nav-bar-height);
+    width: auto;
+    /* margin-left: 100px; */
+    /* background: purple; */
+    width: 10%;
+
+}
+
+.navbar{
+    /* background: yellow; */
+    width: 80%;
+}
+
+    .navbar>ul{
+        /* background: green; */
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        height: var(--nav-bar-height);
+        gap: 30px;
+
+        }
+
+        .navbar>ul>li{
+            /* background: purple; */
+            /* color: #fff; */
+            text-decoration: none;
+            width: 160px;
+            height: 70%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: calc(var(--h2-font-size) - 22px) ;
+            transition: 0.3s ease;
+            border-radius: 10px;
+        }
+        
+        .active,.no_active{
+            transition: 0.3s ease;
+        border-radius: 10px;
+        height: 90%;
+        width: 100%;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--color-dark-gray);
+        
+    }
+    .no_active:hover{
+        background: rgba(0, 0, 0, 0.1);
+    }
+    
+    
+    .active{
+        border-bottom: 3px solid var(--color-morado-oscuro);
+        background-color: #fff;
+
+    }
+    
+    .no_active{
+        background-color: rgba(0, 0, 0, 0.08);
+}
+
+.btn_salir{
+    border: none;
+    background-color: var(--color-morado);
+    padding: 20px;
+    width: 120px;
+    border-radius: 10px;
+    color: #fff;
+    font-size: calc(var(--h2-font-size) - 25px) ;
+
+}
+
+.horizontal{
+    width: 80%;
+    margin: auto;
+    margin-top: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    
+}
