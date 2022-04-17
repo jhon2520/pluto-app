@@ -1,0 +1,75 @@
+@import url("Const.css");
+
+.main_container{
+    /* background: red; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    height: 100vh;
+}
+
+.main_container>section:nth-child(2){
+    /* background: green; */
+    align-self: flex-start;
+}
+.main_container>section:nth-child(odd){
+    /* background: green; */
+    align-self: flex-end;
+}
+
+
+.seccion{
+    /* background: yellow; */
+    width: 80%;
+    height: 25vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+    .seccion>img{
+        height: 80%;
+        /* background: green; */
+
+    }
+    .seccion>div{
+        /* background: purple; */
+        height: 80%;
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        padding: 20px;
+        color: var(--color-verde);
+        font-size: calc(var(--p-font-size) + 5px)
+    }
+    .seccion>div>p>span{
+        color: var(--color-morado);
+        font-weight: 600;
+    }
+
+    .seccion>div>button{
+        background: var(--color-verde);
+        color: #fff;
+        height: var(--heigth-button-1);
+        border: none;
+        width: 120px;
+        border-radius: 10px;
+        transition: 0.3s ease;
+    }
+
+    .seccion>div>button:hover{
+        background: var(--color-verde-oscuro);
+        transform: translateY(-5px);
+    }
+
+    .horizontal{
+    width: 80%;
+    margin: auto;
+    margin-top: 0px;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    
+}
