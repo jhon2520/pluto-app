@@ -1,0 +1,51 @@
+@import url("Const.css");
+
+.main_info_container{
+    /* background: red; */
+    height: 88vh;
+    padding: 40px;
+    display: flex;
+}
+
+.section{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3%;
+}
+
+
+.section>img{
+    width: 50%;
+    /* background: yellow; */
+}
+
+.grupoh{
+    /* background-color: green; */
+    height: 50%;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 20px;
+}
+
+    .grupoh>h2{
+        color: var(--color-verde);
+        font-size: var(--h2-font-size);
+    }
+
+    .grupoh>p{
+        color: var(--color-dark-gray);
+        font-size: var(--h3-font-size);
+    }
+
+.horizontal{
+    width: 80%;
+    margin: auto;
+    margin-top: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    
+}

@@ -11,6 +11,7 @@
 
 .contacto_container{
     background: var(--color-verde) ;
+    background: var(--gradient);
     width: 100%;
     display: flex;
     flex-direction: column;

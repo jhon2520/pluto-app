@@ -11,5 +11,6 @@
     --color-ligth-gray:#789395;
     --color-dark-gray:#525E75;
     --heigth-button-1:35px;
-    --nav-bar-height:10vh
+    --nav-bar-height:10vh;
+    --gradient:linear-gradient(45deg, #49a09d, #5f2c82)
 }

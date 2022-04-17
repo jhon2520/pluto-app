@@ -1,0 +1,38 @@
+.navbar{
+    /* background: red; */
+    margin-top: 20px;
+}
+.navbar>ul{
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    text-align: center;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.navbar>ul>li{
+    list-style: none;
+    padding: 10px;
+    margin: 0 2px;
+    background: rgba(255, 255, 255, 0.5);
+    width: 50px;
+    color: #fff;
+    border-radius: 5px;
+}
+.navbar>ul>li:hover{
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.navbar>ul>.active{
+    transition: 0.3s ease;
+    transform: translateY(-5px);
+}
+
+.navbar>ul>.no_active{
+    
+    transition: 0.3s ease;
+    background: rgba(0, 0, 0, 0.2);
+}
