@@ -1,0 +1,112 @@
+.main_page_container{
+    /* background: red; */
+    height: 100vh ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5%;
+    background: var(--gradient);
+}
+
+    .main_page_container>h2{
+        color: #fff;
+        font-size: var(--h2-font-size);
+    }
+
+.form_container{
+    /* background: green; */
+    height: 50vh;
+    width: 30%;
+    border: 1px solid #fff;
+    border-radius: 20px;
+    -webkit-box-shadow: 10px 11px 31px -4px rgba(255,255,255,0.25);
+    -moz-box-shadow: 10px 11px 31px -4px rgba(255,255,255,0.25);
+    box-shadow: 10px 11px 31px -4px rgba(255,255,255,0.25);
+}
+
+    .form_container>.form{
+        /* background: yellow; */
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 20px;
+        padding-left: 30px;
+        gap: 1%;
+        border-top-right-radius: 20px;
+        border-bottom-right-radius: 20px;
+
+    }
+
+    .form>h3{
+        font-size: var(--h3-font-size);
+        color: #fff;
+        font-weight: 300;
+        /* background: red; */
+    }
+
+    .form>input{
+        width: 100%;
+        height: 35px;
+        border-radius: 10px;
+        padding-left: 15px;
+        color: var(--color-ligth-gray);
+        font-size: var(--h3-font-size);
+        /* border: 1px solid var(--color-verde); */
+        margin-bottom: 20px;
+        outline: none;
+        transition: 0.07s;
+        border: none;
+    }
+    .form>input:focus,.form>textarea:focus,.form>textarea:focus{
+            border-bottom: 1px solid var(--color-verde);
+        }
+        
+        .form>textarea{
+        width: 100%;
+        border-radius: 10px;
+        border: none;
+        padding-left: 15px;
+        color: var(--color-ligth-gray);
+        font-size: var(--h3-font-size);
+        outline: none;
+        /* border: 1px solid var(--color-verde); */
+    }
+
+.botones{
+    /* background: yellow; */
+    display: flex;
+    margin-top: 10px;
+    width: 100%;
+    align-items: center;
+    justify-content: space-around;
+
+}
+
+    .botones>button{
+        padding: 0 10px;
+        width: 40%;
+        height: var(--heigth-button-1);
+        border: none;
+        color: #fff;
+        border-radius: 6px;
+        transition: 0.3s ease-in-out;
+        
+    }
+    .botones>button:nth-child(1){
+        background: var(--color-verde);
+    }
+        .botones>button:nth-child(1):hover{
+            background: var(--color-verde-oscuro);
+            transform: translateY(-5px);
+        }
+        .botones>button:nth-child(2){
+            background: var(--color-morado);
+        }
+        .botones>button:nth-child(2):hover{
+            background: var(--color-morado-oscuro);
+            transform: translateY(-5px);
+        }

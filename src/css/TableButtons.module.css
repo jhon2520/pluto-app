@@ -1,0 +1,40 @@
+.btn_container{
+    /* background: red; */
+    margin-top: 40px;
+    display: flex;
+    gap: 10px;
+}
+
+.btn_container>button{
+    padding: 0 15px;
+    border-radius: 6px;
+    color: #fff;
+    border: none;
+    height: var(--heigth-button-1);
+    transition: 0.3s ease;
+}
+.btn_container>button:hover{
+        transform: translateY(-5px);
+    }
+
+.btn_container>button:nth-child(2){
+    background: var(--color-verde);
+}
+    
+.btn_container>button:nth-child(1):hover,.btn_container>button:nth-child(2):hover{
+        background: var(--color-verde-oscuro);
+        
+    }
+
+.btn_container>button:nth-child(3){
+    background: var(--color-morado);
+}
+
+    .btn_container>button:nth-child(3):hover{
+        background: var(--color-morado-oscuro);
+    }
+
+
+.btn_container>button:nth-child(1){
+    background: var(--color-verde);
+}

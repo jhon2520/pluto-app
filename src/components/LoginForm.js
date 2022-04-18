@@ -1,8 +1,17 @@
 import React from 'react'
 import styles from "../css/Login.module.css"
 import { Link } from 'react-router-dom'
+import {useDispatch} from "react-redux"
+import { startLogignWithGoogle } from '../actions/auth.action'
 
 const LoginForm = () => {
+
+    const dispath = useDispatch();
+
+    const handleLoginWithGoogle = () =>{
+        dispath(startLogignWithGoogle())
+    }
+
     return (
         <div className={styles.form_container}>
             <form className={styles.form_login}>
@@ -26,7 +35,7 @@ const LoginForm = () => {
                 >
                     Ingresar
                 </button>
-                <div className={styles.google_btn_container}>
+                <div onClick={handleLoginWithGoogle} className={styles.google_btn_container}>
                     <div className={styles.google_btn_container_logo} >
                         <img className="google-icon" src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" alt="google button" />
                     </div>
@@ -34,7 +43,7 @@ const LoginForm = () => {
                         Ingresar con google
                     </p>
                 </div>
-                <Link className={styles.link_router} to="/register">Crear una nueva cuenta</Link>
+                <Link className={styles.link_router} to="/login/register">Crear una nueva cuenta</Link>
 
             </form>
         </div>

@@ -2,8 +2,17 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 import appImages from '../helpers/appImages'
 import styles from "../css/Navbar.module.css"
+import {useDispatch} from "react-redux"
+import { startLogout } from '../actions/auth.action'
 
 const Navbar = () => {
+
+    const dispatch = useDispatch();
+
+    const handleLogout = () =>{
+        dispatch(startLogout())
+    }
+
     return (
         <>
             <div className={styles.nabvar_contianer}>
@@ -14,7 +23,7 @@ const Navbar = () => {
                         <li><NavLink className={(data)=> data.isActive ? styles.active: styles.no_active} to="/spend">Gastos</NavLink></li>
                         <li><NavLink className={(data)=> data.isActive ? styles.active: styles.no_active} to="/saving">Ahorro</NavLink></li>
                         <li><NavLink className={(data)=> data.isActive ? styles.active: styles.no_active} to="/dashboard">DashBoard</NavLink></li>
-                        <button className={styles.btn_salir}>Salir</button>
+                        <button onClick={handleLogout} className={styles.btn_salir}>Salir</button>
                     </ul>
                 </nav>
             </div>

@@ -1,6 +1,7 @@
 import {useState,useEffect} from 'react'
 import _ from "lodash";
 
+//TODO:ORganizar el navpagination para cuando hay muchisismo de ellos se pueda hacer scroll
 const pageSize = 10;
 
 const useTable = (data) => {
