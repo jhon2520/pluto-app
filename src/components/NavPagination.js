@@ -7,7 +7,7 @@ const NavPagination = ({pages,pagination,currentPage}) => {
         <nav className={styles.navbar}>
             <ul>
                 {
-                    pages.map((page,i)=>{
+                    pages?.map((page,i)=>{
                         return(
                             <li className={(currentPage===page) ? styles.active:styles.no_active} onClick={()=>pagination(page)} key={i}>{page}</li>
                         );

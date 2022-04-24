@@ -16,7 +16,7 @@
     width: auto;
     /* margin-left: 100px; */
     /* background: purple; */
-    width: 10%;
+    
 
 }
 
@@ -44,7 +44,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: calc(var(--h2-font-size) - 22px) ;
+            font-size: var(--h3-font-size) ;
             transition: 0.3s ease;
             border-radius: 10px;
         }
@@ -83,7 +83,7 @@
     width: 120px;
     border-radius: 10px;
     color: #fff;
-    font-size: calc(var(--h2-font-size) - 25px) ;
+    font-size: var(--p-font-size)  ;
     transition: 0.3s ease;
 
 }

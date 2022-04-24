@@ -9,7 +9,7 @@ const LoginContainer = () => {
 
                 <div className={styles.welcome_container}>
                     <h2>¡Bienvenido de nuevo!</h2>
-                    <p>Ingresa con tu <span>corre</span> y <span>contraseña</span> para continuar con el registro de tus ahorros, gastos y la demás funcionalidades
+                    <p>Ingresa con tu <span>correo</span> y <span>contraseña</span> para continuar con el registro de tus ahorros, gastos y la demás funcionalidades
                     </p>
                     <img src={appImages("./LogoBlanco.png")} alt="imagen" />
                 </div>

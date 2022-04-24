@@ -3,14 +3,19 @@
     --color-verde-oscuro:#004f64;
     --color-morado:#6334E3;
     --color-morado-oscuro:#46279b;
-    --h1-font-size: 50px;
-    --h2-font-size: 42px;
-    --h3-font-size:18px;
-    --p-font-size:16px;
+    --color-eliminar:#890F0D;
+    --color-eliminar-oscuro:#640c0b;
+    --h1-font-size: 3.9rem;
+    --h2-font-size: 3.0rem;
+    --h3-font-size: 2.5rem;
+    --p-font-size: 2rem;
+    --main-padding:20px;
     --font-family:"poppins";
     --color-ligth-gray:#789395;
     --color-dark-gray:#525E75;
     --heigth-button-1:35px;
     --nav-bar-height:10vh;
-    --gradient:linear-gradient(45deg, #49a09d, #5f2c82)
+    --gradient:linear-gradient(45deg, #49a09d, #5f2c82);
+    --border-radious-btn: 6px
+
 }

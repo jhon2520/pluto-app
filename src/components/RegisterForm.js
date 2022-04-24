@@ -5,6 +5,7 @@ import {useDispatch} from "react-redux"
 import styles from "../css/Register.module.css";
 import formLoginValidation from '../helpers/validateLogin';
 import { startRegisterWithNameEmailPassword } from '../actions/auth.action';
+import useForm from '../hooks/useForm';
 
 
 
@@ -12,37 +13,30 @@ import { startRegisterWithNameEmailPassword } from '../actions/auth.action';
 const RegisterForm = () => {
 
     const dispatch = useDispatch();
-
-    const [formValues,setFormValues] = useState({
+    const [formvalues,handleSubmit,handleChange,handleOnKeyPress] = useForm({
         name:"jhon romero",
         email:"jhon@gmail.com",
         password:"123456M",
         password2:"123456M"
     })
 
-    const {name,email,password,password2} = formValues;
+    const {name,email,password,password2} = formvalues;
 
-    const handleSubmit = (e)=>{
-        e.preventDefault();
+    const Submit = (e)=>{
+        
+        handleSubmit(e);
 
-        if(formLoginValidation(formValues)){
+        if(formLoginValidation(formvalues)){
             dispatch(startRegisterWithNameEmailPassword(name,email,password))
             
         }
-    }
-
-    const handleChange = (e)=>{
-        setFormValues({
-            ...formValues,
-            [e.target.name]:e.target.value
-        })
     }
 
 
 
     return (
         <div  className={styles.form_container}>
-            <form onSubmit={handleSubmit} className={styles.form_register}>
+            <form onSubmit={Submit} className={styles.form_register}>
                 <h3>Nombre</h3>
                 <input 
                     type="text" 
@@ -51,7 +45,8 @@ const RegisterForm = () => {
                     autoComplete='off'
                     value={name}
                     onChange={handleChange}
-                />
+                    onKeyPress={handleOnKeyPress}
+                    />
                 <h3>Correo</h3>
                 <input 
                     type="text" 
@@ -60,8 +55,9 @@ const RegisterForm = () => {
                     autoComplete='off'
                     value={email}
                     onChange={handleChange}
-
-                />
+                    onKeyPress={handleOnKeyPress}
+                    
+                    />
                 <h3>Contraseña</h3>
                 <input 
                     type="password" 
@@ -71,6 +67,7 @@ const RegisterForm = () => {
                     value={password}
                     onChange={handleChange}
                     onPaste={(e)=>e.preventDefault()}
+                    onKeyPress={handleOnKeyPress}
                     
                     />
                 <h3>Confirma contraseña</h3>
@@ -82,6 +79,7 @@ const RegisterForm = () => {
                     value={password2}
                     onChange={handleChange}
                     onPaste={(e)=>e.preventDefault()}
+                    onKeyPress={handleOnKeyPress}
                     
                 />
                 <button

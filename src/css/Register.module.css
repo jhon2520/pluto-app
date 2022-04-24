@@ -123,7 +123,7 @@
     .form_register>button{
         width: 90%;
         margin-top: 40px;
-        border-radius: 10px;
+        border-radius: var(--border-radious-btn);
         border: none;
         height: var(--heigth-button-1);
         color: #fff;
@@ -139,10 +139,10 @@
             
         }
     
-    .form_login>.link{
+    .form_register>.link{
         margin-top: 20px;
+        font-size: var(--p-font-size);
         color: var(--color-morado);
-
     }
 
 

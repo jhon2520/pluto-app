@@ -3,7 +3,7 @@ import errorMessage from "./errorMessage";
 
 //contra : 123456M
 
-const formLoginValidation = ({name,email,password,password2})=>{
+const formRegisterValidation = ({name,email,password,password2})=>{
 
     if(!validator.isAlpha(name.replace(" ","")) || name.length < 3){
         errorMessage("Nombre incorrecto","El nombre debe tener una longitud mínimo de 3 letras y no tener números")
@@ -25,4 +25,7 @@ const formLoginValidation = ({name,email,password,password2})=>{
     return true;
 }
 
-export default formLoginValidation;
+export default formRegisterValidation;
+
+
+

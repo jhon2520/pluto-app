@@ -1,3 +1,6 @@
+@import url("Const.css");
+
+
 .main_page_container{
     /* background: red; */
     height: 100vh ;
@@ -54,7 +57,7 @@
         border-radius: 10px;
         padding-left: 15px;
         color: var(--color-ligth-gray);
-        font-size: var(--h3-font-size);
+        font-size: var(--p-font-size);
         /* border: 1px solid var(--color-verde); */
         margin-bottom: 20px;
         outline: none;
@@ -83,6 +86,7 @@
     width: 100%;
     align-items: center;
     justify-content: space-around;
+    font-size: var(--p-font-size);
 
 }
 
@@ -94,6 +98,7 @@
         color: #fff;
         border-radius: 6px;
         transition: 0.3s ease-in-out;
+        font-size: calc(var(--p-font-size) - 3px);
         
     }
     .botones>button:nth-child(1){

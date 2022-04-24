@@ -76,7 +76,7 @@
 .icons_info>div>p{
     color: #fff;
     text-align: center;
-    font-size: var(--h3-font-size);
+    font-size: var(--p-font-size);
 }
 
 .form_main_container{
@@ -133,12 +133,15 @@
         padding: 0 10px;
         border-radius: 10px;
         border: 1px solid var(--color-verde);
+        font-size: var(--p-font-size);
     }
     .form>input{
         height: var(--heigth-button-1);
+        font-size: var(--p-font-size);
     }
-
+    
     .form>button{
+        font-size: var(--p-font-size);
         border: none;
         padding: 0 10px;
         background: var(--color-verde);

@@ -1,4 +1,4 @@
-import React,{useEffect,useState} from 'react'
+import React,{useEffect} from 'react'
 import { BrowserRouter,Routes,Route,Navigate } from 'react-router-dom'
 import {useDispatch} from "react-redux"
 
@@ -14,12 +14,12 @@ import {getAuth,onAuthStateChanged} from "firebase/auth"
 import { login } from '../actions/auth.action'
 import PublicRoutes from './PublicRoutes'
 import PrivateRoutes from './PrivateRoutes'
+import { startLoadingSpends } from '../actions/spend.action'
 
 
 
 const AppRouter = () => {
 
-    console.log("app routes");
 
     const auth = getAuth(firebaseApp);
     const dispatch = useDispatch();
@@ -30,6 +30,7 @@ const AppRouter = () => {
             
             if(user?.uid){
                 dispatch(login(user.uid,user.displayName))
+                dispatch(startLoadingSpends(user.uid))
             }
             
         })
@@ -63,6 +64,7 @@ const AppRouter = () => {
                             <Route path='/home' element={<HomePage/>} />
                             <Route path='spend' element={<SpendPage/>} />
                             <Route path='spend/new' element={<NewSpendPage/>} />
+                            <Route path='spend/:spendId' element={<NewSpendPage/>} />
                             <Route path='saving' element={<SavingPage/>} />
                             <Route path='dashboard' element={<DashBoardPage/>} />
                             <Route path='*' element={<Navigate replace to="/home"/> } />

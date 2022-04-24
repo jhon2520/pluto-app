@@ -1,4 +1,4 @@
-import {getAuth,createUserWithEmailAndPassword,updateProfile,signOut,signInWithPopup,GoogleAuthProvider} from "firebase/auth"
+import {getAuth,createUserWithEmailAndPassword,updateProfile,signOut,signInWithPopup,GoogleAuthProvider, signInWithEmailAndPassword} from "firebase/auth"
 import firebaseApp from "../firebase/firebaseConfig"
 import errorMessage from "../helpers/errorMessage"
 import successMessage from "../helpers/successMessage"
@@ -53,6 +53,24 @@ export const startLogignWithGoogle = ()=>{
     }
 }
 
+
+export const startLoginWithEmailPassword = (email,password)=>{
+
+    return(dispath)=>{
+
+        const auth = getAuth(firebaseApp);
+        signInWithEmailAndPassword(auth,email,password)
+        .then((data)=>{
+            const {user} = data;
+            dispath(login(user.uid,user.displayName))
+        })
+        .catch((err)=>{
+            errorMessage("Error",err.message);
+        })
+
+    }
+
+}
 
 
 

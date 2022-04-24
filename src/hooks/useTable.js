@@ -17,8 +17,10 @@ const useTable = (data) => {
 
 
     useEffect(()=>{
-        setPaginated(_(data).slice(0).take(pageSize).value())
 
+    
+        setPaginated(_(data).slice(0).take(pageSize).value())
+    
     },[data])
 
     const pagination = (pageNo)=>{
@@ -30,8 +32,10 @@ const useTable = (data) => {
 
     }
 
-    const pageCount = (data.length > 0) ? Math.ceil(data.length/pageSize) : 0
-    if(pageCount === 1) return null;
+    const pageCount = (data.length > 10) ? Math.ceil(data.length/pageSize) : 0
+    
+    
+    //if(pageCount <= 1) return null;
 
     // usando lodash
     const pages = _.range(1,pageCount+1)

@@ -39,7 +39,7 @@
 
     .grupoh>p{
         color: var(--color-dark-gray);
-        font-size: var(--h3-font-size);
+        font-size: var(--p-font-size);
     }
 
 .horizontal{

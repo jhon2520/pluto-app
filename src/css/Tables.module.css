@@ -3,10 +3,6 @@
 
 .tabla_container{
 
-    /* position: absolute;
-	top: 50%;
-	left: 50%; */
-	/* transform: translate(-50%, -50%); */
     background: linear-gradient(45deg, #49a09d, #5f2c82);
     display: flex;
     flex-direction: column;
@@ -47,6 +43,8 @@
     
 }
 th,td{
+    font-size: var(--p-font-size);
+    font-weight: 100;
     padding: 15px;
 	background-color: rgba(255,255,255,0.2);
     color: #fff;
@@ -54,6 +52,8 @@ th,td{
 th{
     text-align: left;
     background-color: #55608f;
+    font-size: var(--p-font-size);
+    font-weight: 300;
 }
 
 tbody>tr:hover{
@@ -62,4 +62,38 @@ tbody>tr:hover{
 
 tbody>td{
     position: relative;
+}
+
+tbody>tr>td>.btn_editar{
+    background: var(--color-verde);
+    color: white;
+    padding: 5px var(--main-padding);
+    border: none;
+    font-size: calc(var(--p-font-size) - 3px );
+    border-radius: 4px;
+    transition: 0.3s ease-in-out;
+    
+}
+
+tbody>tr>td>.btn_editar:hover{
+    background: var(--color-verde-oscuro);
+    transform: translateY(-3px);
+    
+}
+
+tbody>tr>td>.btn_eliminar{
+    background: var(--color-eliminar);
+    color: white;
+    padding: 5px var(--main-padding);
+    border: none;
+    font-size: calc(var(--p-font-size) - 3px );
+    border-radius: 4px;
+    transition: 0.3s ease-in-out;
+    
+}
+
+tbody>tr>td>.btn_eliminar:hover{
+    background: var(--color-eliminar-oscuro);
+    transform: translateY(-3px);
+    
 }

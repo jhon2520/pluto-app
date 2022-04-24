@@ -44,21 +44,28 @@
         gap: 20px;
         padding: 20px;
         color: var(--color-verde);
-        font-size: calc(var(--p-font-size) + 5px)
     }
+    .seccion>div>p{
+        
+        font-size: var(--p-font-size)
+    }
+    
     .seccion>div>p>span{
         color: var(--color-morado);
         font-weight: 600;
+        font-size: var(--p-font-size)
     }
-
+    
     .seccion>div>button{
         background: var(--color-verde);
         color: #fff;
         height: var(--heigth-button-1);
         border: none;
-        width: 120px;
+        /* width: 150px; */
         border-radius: 10px;
         transition: 0.3s ease;
+        font-size:  calc(var(--p-font-size) - 3px);
+        padding: 0 var(--main-padding);
     }
 
     .seccion>div>button:hover{

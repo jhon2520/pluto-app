@@ -1,3 +1,5 @@
+@import url("Const.css");
+
 .navbar{
     /* background: red; */
     margin-top: 20px;
@@ -21,6 +23,7 @@
     width: 50px;
     color: #fff;
     border-radius: 5px;
+    font-size: var(--p-font-size);
 }
 .navbar>ul>li:hover{
     background: rgba(255, 255, 255, 0.2);
