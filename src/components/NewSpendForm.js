@@ -4,6 +4,7 @@ import { useNavigate,useParams } from 'react-router-dom'
 import { useDispatch,useSelector } from 'react-redux'
 import { activeSpend, startAddingNewSpend, startEditingSpend } from '../actions/spend.action'
 import useForm from '../hooks/useForm'
+import successMessage from '../helpers/successMessage'
 
 
 
@@ -22,16 +23,16 @@ const NewSpendForm = () => {
         value:"",
         description:"",
     })
+    
+    //    console.log(active);
     const state = useSelector(state => state);
     const {spends} = state.spend;
     const {active} = state.spend;
-
-//    console.log(active);
-
-  //  console.log(spends);
-
+    
+    //  console.log(spends);
+    
     useEffect(() => {
-
+        
         if(spendId){
 
             const spend = spends.find(spend=> spend.id === spendId)
@@ -48,7 +49,6 @@ const NewSpendForm = () => {
 
     }, [spendId,setFormValues,spends,dispatch]);
 
-    
 
 
     
@@ -65,8 +65,11 @@ const NewSpendForm = () => {
     }
     
     const handleEdit =() =>{
-       // console.log("Editando");
+
+        dispatch(activeSpend(spendId,{date,value,description}))
         dispatch(startEditingSpend(active))
+        .then(successMessage(`Editar`,"Gasto editado correctamente"));
+        console.log("1) Se editó el registro");
         navigate(-1)
     }
 

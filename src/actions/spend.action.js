@@ -1,6 +1,7 @@
 import TYPES from "../types/types"
 import {collection, doc,getFirestore, setDoc,getDocs,query, deleteDoc, Firestore, updateDoc} from "firebase/firestore"
 import firebaseApp from "../firebase/firebaseConfig"
+import successMessage from "../helpers/successMessage"
 
 
 const firestore = getFirestore(firebaseApp)
@@ -127,26 +128,21 @@ export const editSpend = (id,spend)=>{
     }
 }
 
-export const startEditingSpend = (spend)=>{
+export const startEditingSpend = ()=>{
 
     return async(dispatch,getState)=>{
 
         const state = getState();
         const {uid} = state.auth
-        console.log("uid",uid);
+        const {active} = state.spend
+        const spendToEdit = {...active}
 
-        const spendToEdit = {...spend}
-        console.log("spendtoEdit",spendToEdit)
-
+        console.log("activo dentro del dispatch",active);
         delete spendToEdit.id
-        console.log("spendtoEdit sin id",spendToEdit)
-
-        const spendRef = doc(firestore, `${uid}/app/spends/${spend.id}`)
-        console.log("spend.id", spend.id);
-        console.log("spenRef",spendRef)
+        const spendRef = doc(firestore, `${uid}/app/spends/${active.id}`)
 
         await updateDoc(spendRef,spendToEdit)
-        dispatch(editSpend(spend.id,spendToEdit));
+        dispatch(editSpend(active.id,spendToEdit));
         
     }
 

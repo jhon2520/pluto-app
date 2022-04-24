@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import tables from "../css/Tables.module.css"
 // import spendingData from '../assets/data/spending'
 import useTable from '../hooks/useTable'
@@ -6,19 +6,29 @@ import NavPagination from './NavPagination'
 import TableButtons from './TableButtons'
 import { useNavigate } from 'react-router-dom'
 import { useDispatch,useSelector } from 'react-redux'
-import {startDeletingSpend} from "../actions/spend.action"
+import {startDeletingSpend, startLoadingSpends} from "../actions/spend.action"
 import questionMessage from '../helpers/questionMessage'
 import successMessage from '../helpers/successMessage'
 
 
 
-const TableSpend = ({spends}) => {
+const TableSpend = () => {
 
-    const [paginated,pages,pagination,currentPage] = useTable(spends)
-    // const state = useSelector(state => state);
-    // const {uid} = state.auth
     const navigate = useNavigate();
     const dispatch = useDispatch();
+    const state = useSelector(state=>state)
+    const {spends} = state.spend
+    const {uid} = state.auth
+    const [paginated,pages,pagination,currentPage] = useTable(spends)
+
+    useEffect(()=>{
+
+        
+        dispatch(startLoadingSpends(uid))
+        console.log("carga de datos disparado nuevamente desde la tabla");
+
+    },[dispatch,uid,spends])
+    
 
 
     //console.log(uid)
@@ -32,7 +42,7 @@ const TableSpend = ({spends}) => {
     }
 
     const handleDelete = (id) =>{
- 
+
         questionMessage().then((result)=>{
             if(result.isConfirmed){
                 successMessage("Eliminado","registo eliminado con éxito")
@@ -40,6 +50,8 @@ const TableSpend = ({spends}) => {
             }
         })
     }
+
+
 
     return (
         <div className={tables.tabla_container}>

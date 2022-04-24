@@ -9,7 +9,10 @@ const successMessage = (titulo,mensaje,tiempo)=>{
         text:mensaje,
         backdrop:"rgba(0,0,0,0.4)",
         timer:1500,
-        showConfirmButton:false
+        showConfirmButton:false,
+        didOpen:()=>{
+            Swal.showLoading();
+        }
     });
 }
 
