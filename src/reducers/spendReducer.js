@@ -34,15 +34,14 @@ const spendReducer = (state = initState,action)=>{
 
     
     switch (action.type) {
-        case TYPES.SPENDADDNEW:
 
+        case TYPES.SPENDADDNEW:
             return{
                 ...state,
                 spends:[...state.spends,/*action.payload */]
             }
 
         case TYPES.SPENDLOAD:
-
             return{
                 ...state,
                 active:[],
@@ -70,6 +69,13 @@ const spendReducer = (state = initState,action)=>{
                 ? action.payload.spend
                 : spend
                 )
+            }
+
+        case TYPES.SPENDLOGOUT:
+            return{
+                ...state,
+                active:null,
+                spends:[]
             }
 
         default:

@@ -21,7 +21,6 @@ const formRegisterValidation = ({name,email,password,password2})=>{
         errorMessage("Confirmación inválida","las contraseñas no coindiden")
         return false;
     }
-    
     return true;
 }
 

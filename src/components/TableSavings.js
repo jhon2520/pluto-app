@@ -12,20 +12,20 @@ import successMessage from '../helpers/successMessage'
 
 
 
-const TableSpend = () => {
+const TableSavings = () => {
 
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const state = useSelector(state=>state)
-    const {spends} = state.spend
-    const [paginated,pages,pagination,currentPage] = useTable(spends)
+    const {savings} = state.saving
+    const [paginated,pages,pagination,currentPage] = useTable(savings)
 
     const handleNewSpend = () =>{
-        navigate("/spend/new")
+        navigate("/saving/new")
     }
 
     const handleEdit = (idSpend) =>{
-        navigate(`/spend/${idSpend}`)
+        navigate(`/saving/${idSpend}`)
     }
 
     const handleDelete = (id) =>{
@@ -42,10 +42,11 @@ const TableSpend = () => {
 
     return (
         <div className={tables.tabla_container}>
-            <h2>Gastos</h2>
+            <h2>Ahorros</h2>
 
-            { (spends.length < 1) ? <h1>No hay datos</h1>:
-                <div className={tables.container_table}>
+            { (savings.length < 1) 
+                ? <h1>No hay ahorros</h1>
+                :<div className={tables.container_table}>
                 <table className={tables.tabla}>
                     <thead>
                         <tr>
@@ -59,16 +60,16 @@ const TableSpend = () => {
                     </thead>
                     <tbody>
                         {
-                            paginated?.map((spend,i)=>{
+                            paginated?.map((saving,i)=>{
                                 return(
 
                                 <tr key={i} className={tables.table_row}>
                                     {/* <td>{spend.id}</td> */}
-                                    <td>{spend.date}</td>
-                                    <td>{spend.value}</td>
-                                    <td>{spend.description}</td>
-                                    <td><button onClick={()=>handleEdit(spend.id)} className={tables.btn_editar}>Editar</button></td>
-                                    <td><button onClick={()=>handleDelete(spend.id)} className={tables.btn_eliminar}>Eliminar</button></td>
+                                    <td>{saving.date}</td>
+                                    <td>{saving.value}</td>
+                                    <td>{saving.description}</td>
+                                    <td><button onClick={()=>handleEdit(saving.id)} className={tables.btn_editar}>Editar</button></td>
+                                    <td><button onClick={()=>handleDelete(saving.id)} className={tables.btn_eliminar}>Eliminar</button></td>
                                 </tr>
                                 );
                             })
@@ -85,7 +86,7 @@ const TableSpend = () => {
                 currentPage={currentPage}
             />
             <TableButtons
-                nombre={"gastos"}
+                nombre={"ahorros"}
                 handleNew={handleNewSpend}
             />
 
@@ -93,4 +94,4 @@ const TableSpend = () => {
     )
 }
 
-export default TableSpend
+export default TableSavings

@@ -9,12 +9,13 @@ import SpendPage from "../pages/SpendPage"
 import SavingPage from "../pages/SavingPage"
 import DashBoardPage from "../pages/DashBoardPage"
 import NewSpendPage from '../pages/NewSpendPage'
+import ToDoPage from "../pages/ToDoPage"
 import firebaseApp from '../firebase/firebaseConfig'
 import {getAuth,onAuthStateChanged} from "firebase/auth"
 import { login } from '../actions/auth.action'
 import PublicRoutes from './PublicRoutes'
 import PrivateRoutes from './PrivateRoutes'
-import { startLoadingSpends } from '../actions/spend.action'
+import NewSavingPage from '../pages/NewSavingPage'
 
 
 
@@ -30,7 +31,7 @@ const AppRouter = () => {
             
             if(user?.uid){
                 dispatch(login(user.uid,user.displayName))
-                dispatch(startLoadingSpends(user.uid))
+               // dispatch(startLoadingSpends(user.uid))
             }
             
         })
@@ -66,6 +67,8 @@ const AppRouter = () => {
                             <Route path='spend/new' element={<NewSpendPage/>} />
                             <Route path='spend/:spendId' element={<NewSpendPage/>} />
                             <Route path='saving' element={<SavingPage/>} />
+                            <Route path='saving/new' element={<NewSavingPage/>} />
+                            <Route path='todo' element={<ToDoPage/>} />
                             <Route path='dashboard' element={<DashBoardPage/>} />
                             <Route path='*' element={<Navigate replace to="/home"/> } />
                         </Routes>

@@ -1,8 +1,6 @@
 import TYPES from "../types/types"
-import {collection, doc,getFirestore, setDoc,getDocs,query, deleteDoc, Firestore, updateDoc} from "firebase/firestore"
+import {collection, doc,getFirestore, setDoc,getDocs,query, deleteDoc, updateDoc} from "firebase/firestore"
 import firebaseApp from "../firebase/firebaseConfig"
-import successMessage from "../helpers/successMessage"
-
 
 const firestore = getFirestore(firebaseApp)
 
@@ -56,8 +54,10 @@ export const setSpends = (spends)=>{
 
 const loadSpends =  async(uid) =>{
 
-    const spendsSnap = await getDocs(query(collection(firestore,`${uid}/app/spends`)))
     const spends = [];
+    /*
+    const spendsSnap = await getDocs(query(collection(firestore,`${uid}/app/spends/`)))
+
 
     spendsSnap.forEach(snap=>{
         spends.push({
@@ -68,6 +68,20 @@ const loadSpends =  async(uid) =>{
 
     return  spends;
 
+    */
+
+    const queryDoc = query(collection(firestore,`${uid}/app/spends/`));
+    const querySnap = await getDocs(queryDoc)
+    querySnap.forEach((snap)=>{
+        spends.push({
+            id:snap.id,
+            ...snap.data()
+        })
+    })
+
+    
+
+    return spends;
 }
 
 export const startLoadingSpends = (uid)=>{
@@ -75,9 +89,7 @@ export const startLoadingSpends = (uid)=>{
     return async(dispatch)=>{
 
         const spends = await loadSpends(uid);
-        // console.log(spends);
         dispatch(setSpends(spends));
-
     }
 
 }
@@ -136,8 +148,7 @@ export const startEditingSpend = ()=>{
         const {uid} = state.auth
         const {active} = state.spend
         const spendToEdit = {...active}
-
-        console.log("activo dentro del dispatch",active);
+        
         delete spendToEdit.id
         const spendRef = doc(firestore, `${uid}/app/spends/${active.id}`)
 
@@ -146,4 +157,10 @@ export const startEditingSpend = ()=>{
         
     }
 
+}
+
+export const spendCleaningLogout = () =>{
+    return{
+        type:TYPES.SPENDLOGOUT,
+    }
 }

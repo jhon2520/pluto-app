@@ -5,9 +5,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-size: 62.5%;
+    font-size: 16px;
 }
-
 
 .page_container{
     height: 100vh;
@@ -17,16 +16,13 @@
     align-items: center;
     gap: 30px;
     font-family: var(--font-family);
-    
 }
 
     .page_container>h1{
         /* background-color: red; */
         font-size: var(--h1-font-size);
-        color: var(--color-verde);
-        
+        color: var(--color-verde);   
     }
-
 
 .main_container{
     /* background: red; */
@@ -38,7 +34,6 @@
     -moz-box-shadow: 10px 11px 31px -4px rgba(0,0,0,0.75);
     box-shadow: 10px 11px 31px -4px rgba(0,0,0,0.75);
     border-radius: 20px;
-
 }
     .welcome_container{
         background: var(--color-verde);
@@ -52,7 +47,6 @@
         border-bottom-left-radius: 20px;
         padding: var(--main-padding);
         overflow: hidden;
-
     }
     .welcome_container>h2{
         font-size: var(--h2-font-size);
@@ -66,7 +60,6 @@
         text-align: justify;
         padding: 30px;
         font-size: var(--p-font-size);
-
     }
 
     span{
@@ -107,7 +100,6 @@
         gap: 1%;
         border-top-right-radius: 20px;
         border-bottom-right-radius: 20px;
-    
     }
     
     .form_login>h3{
@@ -149,8 +141,7 @@
     }
         .form_login>button:hover{
             background-color: var(--color-morado-oscuro);
-            transform: translateY(-3px);
-            
+            transform: translateY(-3px);   
         }
     
     .google_btn_container{
@@ -172,7 +163,6 @@
         .google_btn_container:hover{
             background-color: #2b5cac;
             transform: translateY(-3px);
-            
         }
 
     .google_btn_container_logo{
@@ -192,19 +182,17 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        color: #fff;
-        
+        color: #fff;   
     }
+
     .form_login>.link_router{
         color: var(--color-morado);
         margin-top: 20px;
         font-size: var(--p-font-size);
-
     }
 
 
 /* btn-facebook */
-
 .form_login>.loginBtn {
     box-sizing: border-box;
     position: relative;
@@ -234,6 +222,7 @@
     .form_login>.loginBtn:focus {
         outline: none;
     }
+    
     .form_login>.loginBtn:active {
         box-shadow: inset 0 0 0 32px rgba(0,0,0,0.1);
     }

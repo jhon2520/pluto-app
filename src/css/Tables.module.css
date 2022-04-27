@@ -27,7 +27,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
+    
 }
 
 .tabla{
@@ -39,21 +39,30 @@
     border-top-left-radius: 0.4em;
     border-top-right-radius: 0.4em;
     margin: auto;
-    height: auto;
+    text-align: center;
     
 }
 th,td{
     font-size: var(--p-font-size);
     font-weight: 100;
-    padding: 15px;
+    padding: 8px 10px;
 	background-color: rgba(255,255,255,0.2);
     color: #fff;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 60px;
+    max-height: 30px;
+
+    
+
 }
 th{
-    text-align: left;
+    text-align: center;
     background-color: #55608f;
     font-size: var(--p-font-size);
     font-weight: 300;
+
 }
 
 tbody>tr:hover{
