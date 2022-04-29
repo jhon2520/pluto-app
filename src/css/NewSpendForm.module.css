@@ -12,6 +12,10 @@
     background: var(--gradient);
 }
 
+.main_page_container_saving{
+    background: var(--gradient-saving);
+}
+
     .main_page_container>h2{
         color: #fff;
         font-size: var(--h2-font-size);

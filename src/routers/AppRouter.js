@@ -68,6 +68,7 @@ const AppRouter = () => {
                             <Route path='spend/:spendId' element={<NewSpendPage/>} />
                             <Route path='saving' element={<SavingPage/>} />
                             <Route path='saving/new' element={<NewSavingPage/>} />
+                            <Route path='saving/:savingId' element={<NewSavingPage/>} />
                             <Route path='todo' element={<ToDoPage/>} />
                             <Route path='dashboard' element={<DashBoardPage/>} />
                             <Route path='*' element={<Navigate replace to="/home"/> } />

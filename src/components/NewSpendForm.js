@@ -71,7 +71,7 @@ const NewSpendForm = () => {
 
         if(formNewSpendeValidation(formValues)){
             dispatch(activeSpend(spendId,{date,value,description}))
-            dispatch(startEditingSpend(active))
+            dispatch(startEditingSpend())
             .then(successMessage(`Editar`,"Gasto editado correctamente"));
             navigate(-1)
 

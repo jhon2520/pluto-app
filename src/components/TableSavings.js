@@ -6,9 +6,9 @@ import NavPagination from './NavPagination'
 import TableButtons from './TableButtons'
 import { useNavigate } from 'react-router-dom'
 import { useDispatch,useSelector } from 'react-redux'
-import {startDeletingSpend} from "../actions/spend.action"
 import questionMessage from '../helpers/questionMessage'
 import successMessage from '../helpers/successMessage'
+import { startDeletingSaving } from '../actions/savings.actions'
 
 
 
@@ -33,7 +33,7 @@ const TableSavings = () => {
         questionMessage().then((result)=>{
             if(result.isConfirmed){
                 successMessage("Eliminado","registo eliminado con éxito")
-                dispatch(startDeletingSpend(id))
+                dispatch(startDeletingSaving(id))
             }
         })
     }

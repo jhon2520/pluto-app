@@ -1,17 +1,16 @@
 import React from 'react'
-import appImages from '../helpers/appImages'
 import styles from "../css/SpendPage.module.css"
 
-const SpendMain = () => {
+const MainSavingSpend = ({img,titulo,parrafo}) => {
     return (
 
         <>
             <div className={styles.main_info_container}>
                 <section className={styles.section}>
-                    <img src={appImages("./main2-img.png")} alt="" />
+                    <img src={img} alt="" />
                     <hgroup className={styles.grupoh}>
-                        <h2>MANTÉN TUS GASTOS ORGANIZADOS</h2>
-                        <p>Aquí puedes llevar el registro de tus gastos, revisar el histórico de los mismos y editar la información</p>
+                        <h2>{titulo}</h2>
+                        <p>{parrafo}</p>
                     </hgroup>
                 </section>
             </div>
@@ -20,4 +19,4 @@ const SpendMain = () => {
     )
 }
 
-export default SpendMain
+export default MainSavingSpend

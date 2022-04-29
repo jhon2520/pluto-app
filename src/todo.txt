@@ -1,0 +1,5 @@
+-Crear un limite de gastos
+-Crear metas de ahorro
+-crear datos del usuario como lo es el sueldo, limite de alertas
+-crear un modo dark
+-agregar ondas a los fondos con gradiente

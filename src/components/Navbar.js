@@ -5,6 +5,7 @@ import styles from "../css/Navbar.module.css"
 import {useDispatch} from "react-redux"
 import { startLogout } from '../actions/auth.action'
 import { spendCleaningLogout } from '../actions/spend.action'
+import { savingCleaningLogout } from '../actions/savings.actions'
 
 const Navbar = () => {
 
@@ -13,6 +14,7 @@ const Navbar = () => {
     const handleLogout = () =>{
         dispatch(startLogout())
         dispatch(spendCleaningLogout())
+        dispatch(savingCleaningLogout());
     }
 
     return (
