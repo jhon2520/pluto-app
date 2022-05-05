@@ -4,6 +4,11 @@
     /* background: red; */
     margin-top: 20px;
 }
+/* .navbar_dark{
+    background: red;
+} */
+
+.navbar_dark>ul,
 .navbar>ul{
     
     display: flex;
@@ -15,6 +20,9 @@
     transition: 0.3s ease;
 }
 
+
+
+.navbar_dark>ul>li,
 .navbar>ul>li{
     list-style: none;
     padding: 10px;
@@ -25,17 +33,32 @@
     border-radius: 5px;
     font-size: var(--p-font-size);
 }
+.navbar_dark>ul>li{
+    background: rgba(8, 8, 8, 0.671);
+}
+
 .navbar>ul>li:hover{
     background: rgba(255, 255, 255, 0.2);
 }
 
+.navbar_dark>ul>li:hover{
+    background: rgba(25, 21, 21, 0.557);
+}
+
+.navbar_dark>ul>.active,
 .navbar>ul>.active{
     transition: 0.3s ease;
     transform: translateY(-5px);
 }
 
+
 .navbar>ul>.no_active{
     
     transition: 0.3s ease;
     background: rgba(0, 0, 0, 0.2);
+}
+
+.navbar_dark>ul>.no_active{
+    transition: 0.3s ease;
+    background: rgba(0, 0, 0, 0.492);
 }

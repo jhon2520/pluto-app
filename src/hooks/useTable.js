@@ -32,7 +32,7 @@ const useTable = (data) => {
 
     }
 
-    const pageCount = (data.length > 10) ? Math.ceil(data.length/pageSize) : 0
+    const pageCount = (data?.length > 10) ? Math.ceil(data?.length /pageSize) : 0
     
     
     //if(pageCount <= 1) return null;

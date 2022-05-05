@@ -34,7 +34,6 @@ export const startAddingNewSpend = (value,description,date)=>{
 
         const docuref = doc(collection(firestore,`${uid}/app/spends/`))
         await setDoc(docuref,newSpend);
-        console.log("docu ");
         dispath(addNewSpend(docuref.id,newSpend))
     }
 
@@ -55,20 +54,6 @@ export const setSpends = (spends)=>{
 const loadSpends =  async(uid) =>{
 
     const spends = [];
-    /*
-    const spendsSnap = await getDocs(query(collection(firestore,`${uid}/app/spends/`)))
-
-
-    spendsSnap.forEach(snap=>{
-        spends.push({
-            id:snap.id,
-            ...snap.data()
-        })
-    })
-
-    return  spends;
-
-    */
 
     const queryDoc = query(collection(firestore,`${uid}/app/spends/`));
     const querySnap = await getDocs(queryDoc)

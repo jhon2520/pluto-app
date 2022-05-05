@@ -1,6 +1,5 @@
 import React from 'react'
 import tables from "../css/Tables.module.css"
-// import spendingData from '../assets/data/spending'
 import useTable from '../hooks/useTable'
 import NavPagination from './NavPagination'
 import TableButtons from './TableButtons'
@@ -83,6 +82,7 @@ const TableSpend = () => {
                 pages={pages}
                 pagination={pagination}
                 currentPage={currentPage}
+                dark ={false}
             />
             <TableButtons
                 nombre={"gastos"}

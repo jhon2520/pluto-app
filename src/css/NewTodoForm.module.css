@@ -1,0 +1,101 @@
+@import url("Const.css");
+
+.new_todo_page{
+    background: yellow;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3%;
+    margin: 0;
+    padding: 0;
+    background: rgb(81,231,215);
+    background: linear-gradient(156deg, rgb(71, 176, 166) 31%, rgba(78,148,156,0.9528186274509804) 49%, rgba(78,156,142,0.9528186274509804) 76%);
+
+}
+.new_todo_page>h2{
+    font-size: var(--h2-font-size);
+    color: #fff;
+}
+
+.form_container{
+    /* background: red; */
+    height: 60vh;
+    width: 40%;
+    border-radius: 10px;
+    border: 2px solid #fff;
+    color: #fff;
+    
+}
+
+.form{
+    /* background: green; */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    
+}
+    .form>input,.form>textarea,.form>h3,.form>select{
+        width: 90%;
+        /* margin: auto; */
+    }
+    .form>input,.form>textarea,.form>select{
+        margin-bottom: 2%;
+        height: 35px;
+        border-radius: 6px;
+        outline: none;
+        border: none;
+    }
+
+    .form>textarea{
+        height: 120px;
+    }
+
+    .form>input,.form>textarea,.form>select{
+        color: var(--color-dark-gray);
+        padding: 10px;
+    }
+
+    .form>h3{
+        font-size: var(--h3-font-size);
+    }
+
+    .botones{
+        /* background: purple; */
+        width: 90%;
+        display: flex;
+        flex-direction: row;
+        gap: 3px;
+        align-items: center;
+        justify-content: space-around;
+    }   
+
+        .botones>button{
+            border: none;
+            height: var(--heigth-button-1);
+            border-radius: 6px;
+            width: 30%;
+            color: #fff;
+            transition: 0.3s ease-in-out;
+        }
+
+            .botones>button:hover{
+                transform: translateY(-5px);
+            }
+
+        .botones>button:first-child{
+            background: var(--color-verde);
+        }
+            .botones>button:first-child:hover{
+                background: var(--color-verde-oscuro);
+            }
+        .botones>button:last-child{
+            background: var(--color-eliminar);
+        }
+            .botones>button:last-child:hover{
+                background: var(--color-eliminar-oscuro);
+            }

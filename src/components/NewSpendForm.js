@@ -28,7 +28,7 @@ const NewSpendForm = () => {
     
     const state = useSelector(state => state);
     const {spends} = state.spend;
-    const {active} = state.spend;
+
     
     
     useEffect(() => {

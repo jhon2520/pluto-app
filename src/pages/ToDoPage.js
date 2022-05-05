@@ -11,21 +11,31 @@
 }
 */
 
-import React from 'react'
+import React,{useEffect} from 'react'
 import Navbar from '../components/Navbar'
 import styles from "../css/TodoPage.module.css"
 import ToDoItemsList from '../components/ToDoItemsList'
 import MainSavingSpend from '../components/SpendMain'
 import appImages from '../helpers/appImages'
+import { useDispatch } from 'react-redux'
+import { startLoadingTodos } from '../actions/todo.action'
+
 
 const ToDoPage = () => {
 
     const titulo = "MANTÉN TUS TAREAS PENDIENTES SIEMPRE PRESENTE"
     const parrafo = "Aquí puedes llevar el registro de tus tareas pendientes además de crear alertas para cuando están por cumplirse, marcar como completadas y almacenarlas"
+    const dispath = useDispatch();
+
+    useEffect(() => {
+        
+        dispath(startLoadingTodos())
+
+    }, [dispath]);
 
 
     return (
-        <div>
+        <div className={styles.page_todo}>
             <Navbar/>
             <MainSavingSpend
                 img={appImages("./main4-img.jpg")}
@@ -33,6 +43,7 @@ const ToDoPage = () => {
                 parrafo = {parrafo}
             
             />
+            <h2 className={styles.titulo_listas}>Lista de pendientes</h2>
             <div className={styles.main_container}>
                 <section className={styles.todo_container}>
                     <ToDoItemsList/>

@@ -1,10 +1,10 @@
 import React from 'react'
 import styles from "../css/NavPagination.module.css"
 
-const NavPagination = ({pages,pagination,currentPage}) => {
+const NavPagination = ({pages,pagination,currentPage,dark}) => {
 
     return (
-        <nav className={styles.navbar}>
+        <nav className={dark ?  styles.navbar_dark : styles.navbar}>
             <ul>
                 {
                     pages?.map((page,i)=>{
