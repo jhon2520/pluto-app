@@ -121,8 +121,6 @@ export const startEditingSaving = ()=>{
         const {active} = state.saving;
         const savingToEdit = {...active};
 
-        console.log("usuario id", uid );
-        console.log("active saving", active );
 
         delete savingToEdit.id;
         const savingRef = doc(firestore, `${uid}/app/savings/${active.id}`)

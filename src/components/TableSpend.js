@@ -8,6 +8,7 @@ import { useDispatch,useSelector } from 'react-redux'
 import {startDeletingSpend} from "../actions/spend.action"
 import questionMessage from '../helpers/questionMessage'
 import successMessage from '../helpers/successMessage'
+import { startSettingDataSpent } from '../actions/data.action'
 
 
 
@@ -32,6 +33,7 @@ const TableSpend = () => {
         questionMessage().then((result)=>{
             if(result.isConfirmed){
                 successMessage("Eliminado","registo eliminado con éxito")
+                dispatch(startSettingDataSpent())
                 dispatch(startDeletingSpend(id))
             }
         })

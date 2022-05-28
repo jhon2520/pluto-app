@@ -1,25 +1,21 @@
-import {createStore,combineReducers,applyMiddleware,compose} from "redux"
-import thunk from "redux-thunk"
 import authReducer from "../reducers/authReducer";
+import dataReducer from "../reducers/dataReducer";
 import savingsReducer from "../reducers/savingsReducer";
 import spendReducer from "../reducers/spendReducer";
 import todoReducer from "../reducers/todoReducer";
+import { configureStore } from "@reduxjs/toolkit";
+import uiReducer from "../reducers/uiReducer";
 
 
-
-const composeEnhancers = (typeof window !== 'undefined' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) || compose;
-
-const reducers = combineReducers({
-    auth:authReducer,
-    spend:spendReducer,
-    saving: savingsReducer,
-    todo:todoReducer
+const store = configureStore({
+    reducer:{
+        auth:authReducer,
+        spend:spendReducer,
+        saving: savingsReducer,
+        todo:todoReducer,
+        data:dataReducer,
+        ui:uiReducer
+    }
 })
 
-
-export const store = createStore(
-    reducers,
-    composeEnhancers(
-        applyMiddleware(thunk)
-    )
-)
+export default store

@@ -17,17 +17,17 @@ const HomeContact = () => {
                     </div>
                     <div>
                         {/* poner enlace a whatsapp */}
-                    <a 
-                        target="_blank" 
-                        rel='noreferrer' 
-                        href="https://api.whatsapp.com/send?phone=3053776914&text='Hola, estoy usando tu aplicación y tengo la siguiente duda'">
-                        <img src={appImages("./whatsapp-img.png")} alt="imagen" />
-                    </a>
+                        <a
+                            target="_blank"
+                            rel='noreferrer'
+                            href="https://api.whatsapp.com/send?phone=3053776914&text='Hola, estoy usando tu aplicación y tengo la siguiente duda'">
+                            <img src={appImages("./whatsapp-img.png")} alt="imagen" />
+                        </a>
                         <p>Puedes contactarnos por Whatsapp seleccionado el ícono</p>
                     </div>
                     <div>
                         <img src={appImages("./email-img.png")} alt="imagen" />
-                        <p>Para cualquier comunicación directa puedes contactarme al 
+                        <p>Para cualquier comunicación directa puedes contactarme al
                             correo <span>jhonmunozromero@gmail.com</span>
                             {/* TODO: Crear opción para copiar al portapales el correo */}
                         </p>
@@ -41,7 +41,7 @@ const HomeContact = () => {
                     <p>Envíanos un correo con tus sugerencias para mejorar nuestra aplicación, cualquier sugerencia o comentario es muy apreciado</p>
                 </div>
                 <div className={styles.home_contact}>
-                    <HomeContactForm/>
+                    <HomeContactForm />
                 </div>
 
             </section>

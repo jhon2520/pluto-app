@@ -8,6 +8,9 @@
     font-size: 15px;
     font-family: "poppins",sans-serif;
 }
+html{
+    scroll-behavior: smooth;
+}
 
 .page_container{
     height: 100vh;

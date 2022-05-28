@@ -1,5 +1,6 @@
 import React,{useEffect} from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import { startSettingDataSpent } from '../actions/data.action'
 import { startLoadingSpends } from '../actions/spend.action'
 import Navbar from '../components/Navbar'
 import MainSavingSpend from '../components/SpendMain'
@@ -20,6 +21,7 @@ const SpendPage = () => {
 
     useEffect(()=>{
         dispatch(startLoadingSpends(uid))
+        dispatch(startSettingDataSpent())
     },[dispatch,uid])
 
     return (

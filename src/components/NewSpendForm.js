@@ -6,6 +6,7 @@ import { activeSpend, startAddingNewSpend, startEditingSpend } from '../actions/
 import useForm from '../hooks/useForm'
 import successMessage from '../helpers/successMessage'
 import formNewSpendeValidation from '../helpers/validateNewSpend'
+import { startSettingDataSpent } from '../actions/data.action'
 
 
 
@@ -62,6 +63,7 @@ const NewSpendForm = () => {
         if(formNewSpendeValidation(formValues)){
             
             dispatch(startAddingNewSpend(value,description,date))
+            dispatch(startSettingDataSpent())
             successMessage("Creado","Gasto registrado correctamente")
             navigate(-1)
         }
@@ -72,6 +74,7 @@ const NewSpendForm = () => {
         if(formNewSpendeValidation(formValues)){
             dispatch(activeSpend(spendId,{date,value,description}))
             dispatch(startEditingSpend())
+            dispatch(startSettingDataSpent())
             .then(successMessage(`Editar`,"Gasto editado correctamente"));
             navigate(-1)
 

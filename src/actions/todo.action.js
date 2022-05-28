@@ -15,7 +15,7 @@ const _todoAddNew = (id,todo)=>{
     }
 }
 
-export const startAddingNewToodo = ({title,description,date,dateLimit,select,done = false})=>{
+export const startAddingNewToodo = ({title,description,date,dateLimit,hasAlert,done = false})=>{
 
     return async(dispatch,getState)=>{
     
@@ -27,7 +27,7 @@ export const startAddingNewToodo = ({title,description,date,dateLimit,select,don
             description,
             date,
             dateLimit,
-            select,
+            hasAlert,
             done
         }
 

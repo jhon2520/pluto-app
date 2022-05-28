@@ -19,6 +19,7 @@ import MainSavingSpend from '../components/SpendMain'
 import appImages from '../helpers/appImages'
 import { useDispatch } from 'react-redux'
 import { startLoadingTodos } from '../actions/todo.action'
+import { startSettingUndoneTaks } from '../actions/data.action'
 
 
 const ToDoPage = () => {
@@ -30,6 +31,7 @@ const ToDoPage = () => {
     useEffect(() => {
         
         dispath(startLoadingTodos())
+        dispath(startSettingUndoneTaks())
 
     }, [dispath]);
 

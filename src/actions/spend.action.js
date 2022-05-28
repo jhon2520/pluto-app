@@ -22,7 +22,7 @@ export const startAddingNewSpend = (value,description,date)=>{
 
         const state = getState();
         const {uid} = state.auth;
-        console.log(state);
+        //console.log(state);
 
         const newSpend = {
 

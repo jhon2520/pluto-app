@@ -6,6 +6,7 @@ import formNewToDoValidation from '../helpers/validateNewTodo';
 import { startAddingNewToodo, startUpdatingTodo, todoActive } from '../actions/todo.action';
 import { useDispatch,useSelector } from 'react-redux';
 import successMessage from '../helpers/successMessage';
+import { startSettingUndoneTaks } from '../actions/data.action';
 
 
 const NewTodoForm = () => {
@@ -22,10 +23,10 @@ const NewTodoForm = () => {
         description:"",
         date:"",
         dateLimit:"",
-        select:"",
+        hasAlert:"",
     })
 
-    const {title,description,date,dateLimit,select} = formValues;
+    const {title,description,date,dateLimit,hasAlert} = formValues;
 
     const navigate = useNavigate();
 
@@ -35,21 +36,25 @@ const NewTodoForm = () => {
 
     const handleNewTodo = ()=>{
         if(formNewToDoValidation(formValues)){
-            console.log(select);
+            //console.log(select);
             dispatch(startAddingNewToodo(formValues))
+            dispatch(startSettingUndoneTaks())
             navigate(-1);
         }
     }
 
     const onChange = (e)=>{
+        console.log(e.target.value);
+        console.log({hasAlert});
         handleChange(e)
     }
 
     const handleEdit = ()=>{
         if(formNewToDoValidation(formValues)){
-            dispatch(todoActive(todoId,{title,description,date,dateLimit,select}))
+            dispatch(todoActive(todoId,{title,description,date,dateLimit,hasAlert}))
             dispatch(startUpdatingTodo())
             .then(successMessage(`Editar`,"Tarea editada correctamente"));
+            dispatch(startSettingUndoneTaks())
             navigate(-1)
         }
     }
@@ -64,7 +69,7 @@ const NewTodoForm = () => {
                 description:todo.description,
                 date:todo.date,
                 dateLimit:todo.dateLimit,
-                select:todo.select,
+                hasAlert:todo.hasAlert,
             })
             dispatch(todoActive(todoId,todo))
         }
@@ -114,13 +119,13 @@ const NewTodoForm = () => {
                 />
                 <h3>La tarea genera alerta por vencimiento</h3>
                 <select 
-                    name="select" 
+                    name="hasAlert" 
                     id=""
                     onChange={onChange}
-                    value={select}
+                    value={hasAlert}
                 >
-                    <option value="1">no</option>
-                    <option value="2">si</option>
+                    <option value="0">No</option>
+                    <option value="1">Si</option>
                 </select>
                 <div className={styles.botones}>
                     <button onClick={todoId ? handleEdit: handleNewTodo} type='submit'>Guardar tarea</button>

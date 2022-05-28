@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import tables from "../css/Tables.module.css"
 // import spendingData from '../assets/data/spending'
 import useTable from '../hooks/useTable'
@@ -9,6 +9,7 @@ import { useDispatch,useSelector } from 'react-redux'
 import questionMessage from '../helpers/questionMessage'
 import successMessage from '../helpers/successMessage'
 import { startDeletingSaving } from '../actions/savings.actions'
+import { setTotalSave, startSettingMostValueSaved, startSettingTotalSave } from '../actions/data.action'
 
 
 
@@ -28,16 +29,20 @@ const TableSavings = () => {
         navigate(`/saving/${idSpend}`)
     }
 
-    const handleDelete = (id) =>{
+    const handleDelete = (id,value) =>{
 
         questionMessage().then((result)=>{
             if(result.isConfirmed){
                 successMessage("Eliminado","registo eliminado con éxito")
+                dispatch(startSettingTotalSave())
                 dispatch(startDeletingSaving(id))
             }
         })
     }
 
+    useEffect(()=>{
+        //dispatch(startSettingMostValueSaved())
+    },[dispatch])
 
 
     return (
@@ -51,11 +56,11 @@ const TableSavings = () => {
                     <thead>
                         <tr>
                             {/* <th>id</th> */}
-                            <th>Fecha gasto</th>
-                            <th>Valor gasto</th>
-                            <th>Descripción gasto</th>
-                            <th>Editar gasto</th>
-                            <th>Eliminar gasto</th>
+                            <th>Fecha ahorro</th>
+                            <th>Valor ahorro</th>
+                            <th>Descripción ahorro</th>
+                            <th>Editar ahorro</th>
+                            <th>Eliminar ahorro</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -69,7 +74,7 @@ const TableSavings = () => {
                                     <td>{saving.value}</td>
                                     <td>{saving.description}</td>
                                     <td><button onClick={()=>handleEdit(saving.id)} className={tables.btn_editar}>Editar</button></td>
-                                    <td><button onClick={()=>handleDelete(saving.id)} className={tables.btn_eliminar}>Eliminar</button></td>
+                                    <td><button onClick={()=>handleDelete(saving.id,saving.value)} className={tables.btn_eliminar}>Eliminar</button></td>
                                 </tr>
                                 );
                             })

@@ -5,6 +5,7 @@ import MainSavingSpend from '../components/SpendMain'
 import TableSavings from '../components/TableSavings'
 import { useDispatch,useSelector } from 'react-redux'
 import appImages from '../helpers/appImages'
+import { startSettingTotalSave } from '../actions/data.action'
 
 const SavingPage = () => {
 
@@ -18,6 +19,7 @@ const SavingPage = () => {
 
     useEffect(() => {
         dispatch(startLoadingSavings(uid));
+        dispatch(startSettingTotalSave())
     }, [dispatch,uid]);
 
     return (

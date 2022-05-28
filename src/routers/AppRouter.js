@@ -17,6 +17,7 @@ import PublicRoutes from './PublicRoutes'
 import PrivateRoutes from './PrivateRoutes'
 import NewSavingPage from '../pages/NewSavingPage'
 import NewTodoPage from '../pages/NewTodoPage'
+import UserPage from '../pages/UserPage'
 
 
 
@@ -73,6 +74,7 @@ const AppRouter = () => {
                             <Route path='todo' element={<ToDoPage/>} />
                             <Route path='todo/new' element={<NewTodoPage/>} />
                             <Route path='todo/:todoId' element={<NewTodoPage/>} />
+                            <Route path='user' element={<UserPage/>} />
                             <Route path='dashboard' element={<DashBoardPage/>} />
                             <Route path='*' element={<Navigate replace to="/home"/> } />
                         </Routes>

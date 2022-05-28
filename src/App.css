@@ -1,0 +1,52 @@
+@import url("./css/Const.css");
+
+
+/* width */
+::-webkit-scrollbar {
+    width: 15px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: var(--gradient-saving);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: var(--color-morado-oscuro);
+    transition: 0.3s ease-in-out;
+    border-radius: 8px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color-verde-oscuro);
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+.ReactModalPortal .ReactModal__Overlay {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    transition: opacity .2s ease-in-out;
+    z-index: 999;
+    width: 100vw;
+    height: 100vh;
+    /* background: red; */
+}
+
+.ReactModalPortal .ReactModal__Overlay--after-open {
+    opacity: 1;
+
+}
+
+.ReactModalPortal .ReactModal__Overlay--before-close {
+    opacity: 0;
+}
+
+.ReactModalPortal > div{
+    opacity: 0;
+}

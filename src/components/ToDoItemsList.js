@@ -10,6 +10,7 @@ import {useSelector,useDispatch} from "react-redux";
 import {startDeletingTodo,startDoneTodo} from "../actions/todo.action";
 import questionMessage from '../helpers/questionMessage';
 import successMessage from '../helpers/successMessage';
+import { startSettingUndoneTaks } from '../actions/data.action';
 
 
 
@@ -36,6 +37,7 @@ const ToDoItemsList = ({title,description}) => {
             if(result.isConfirmed){
                 successMessage("Eliminado","registo eliminado con éxito");
                 dispatch(startDeletingTodo(id));
+                dispatch(startSettingUndoneTaks())
             }
         })
     }
@@ -43,8 +45,8 @@ const ToDoItemsList = ({title,description}) => {
     const changeStatusTask =(id)=>{
 
         const task = tasks.find((task)=>task.id === id)
-        // console.log("tarea vieja", task);
         dispatch(startDoneTodo(id,task))
+        dispatch(startSettingUndoneTaks())
     }
 
     const handleEdit =(idTodo)=>{
@@ -54,6 +56,7 @@ const ToDoItemsList = ({title,description}) => {
     useEffect(() => {
         
         setTodos(tasks)
+        console.log();
         setIsLoading(false)
 
     }, [tasks]);
@@ -67,6 +70,7 @@ const ToDoItemsList = ({title,description}) => {
     //     )
     // }
 
+    
     return (
         <div> 
             <div className={styles.table_container}>
@@ -93,7 +97,7 @@ const ToDoItemsList = ({title,description}) => {
                                         <td><p className={styles.description}>{todo.description}</p></td>
                                         <td className={styles.fecha}>{todo.date}</td>
                                         <td className={styles.fecha}>{todo.dateLimit}</td>
-                                        <td className={styles.select}>{todo.select ? "Si": "No"}</td>
+                                        <td className={styles.select}>{(todo.hasAlert === "1") ? "Si": "No"}</td>
                                         <td><button onClick={()=>changeStatusTask(todo.id)} className={todo.done ? styles.btn_terminado : `${styles.btn_terminado} ${styles.btn_terminado_done}`}>{ todo.done ? "concluida":"Inconclusa"}</button></td>
                                         <td><button><FaRegEdit onClick={()=>handleEdit(todo.id)} className={todo.done ? `${styles.icono_editar} ${styles.icono_editar_block}`: styles.icono_editar}/></button></td>
                                         <td><button><MdDelete className={styles.icono_eliminar} onClick={()=>handleDelete(todo.id)}/></button></td>
