@@ -8,12 +8,12 @@
 
 /* Track */
 ::-webkit-scrollbar-track {
-    background: var(--gradient-saving);
+    background: rgb(55, 34, 83);
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-    background: var(--color-morado-oscuro);
+    background: var(--color-verde);
     transition: 0.3s ease-in-out;
     border-radius: 8px;
 }

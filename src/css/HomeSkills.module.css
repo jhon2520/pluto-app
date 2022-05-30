@@ -30,9 +30,12 @@
 }
     .seccion>img{
         height: 80%;
+        transition: 0.3s ease-in-out;
         /* background: green; */
-
     }
+        .seccion>img:hover{
+            transform: scale(1.1);
+        }
     .seccion>div{
         /* background: purple; */
         height: 80%;

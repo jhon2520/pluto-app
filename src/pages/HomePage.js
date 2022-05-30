@@ -8,6 +8,7 @@ import HomeContact from '../components/HomeContact'
 import AlertTodoModal from '../components/AlertTodoModal'
 import { startSettingUndoneTaks } from '../actions/data.action'
 import { SetModalAlertOpend } from '../actions/ui.action'
+import validateDateToAlert from '../helpers/validateDateToAlert'
 
 
 
@@ -17,8 +18,15 @@ const HomePage = () => {
     
     const {taks} = useSelector((state)=> state.data)
     const {taskWithAlerts} = taks
-    const cantidadAlertas = taskWithAlerts.length
+    let taskToShow = []
     const dispatch = useDispatch();
+
+    taskWithAlerts.forEach((task)=> {
+        const days = validateDateToAlert(task.dateLimit);
+        (days <= 5) && taskToShow.push(task);
+    })
+
+    const cantidadAlertas = taskToShow.length;
 
 
     useEffect(() => {

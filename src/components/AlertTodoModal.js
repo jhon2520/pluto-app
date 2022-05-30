@@ -3,7 +3,10 @@ import Modal from "react-modal"
 import { useSelector,useDispatch } from 'react-redux';
 import { SetModalAlertClosed } from '../actions/ui.action';
 import styles from "../css/AlertModal.module.css"
-
+import TodoCardAlert from './TodoCardAlert';
+import { useNavigate } from 'react-router-dom';
+import moment from 'moment';
+import validateDateToAlert from '../helpers/validateDateToAlert';
 
 
 const customStyles = {
@@ -20,17 +23,31 @@ const customStyles = {
 
 Modal.setAppElement("#root")
 
+
 const AlertTodoModal = () => {
 
     const {alertTodoOpen} = useSelector((state)=> state.ui)
     const {taks} = useSelector((state)=> state.data)
     const {taskWithAlerts} = taks
-    console.log(taskWithAlerts);
+    let taskToShow = []
+    const navigate = useNavigate();
     const dispatch = useDispatch();
     
+    
+    taskWithAlerts.forEach((task)=> {
+        const days = validateDateToAlert(task.dateLimit);
+        (days <= 5) && taskToShow.push(task);
+    })
+
 
     const closeModal=()=>{
         dispatch(SetModalAlertClosed())
+    }
+
+    const hangleGoToTodos=()=>{
+        dispatch(SetModalAlertClosed())
+        navigate("/todo")
+        
     }
 
 
@@ -44,14 +61,21 @@ const AlertTodoModal = () => {
                 className={styles.modal}
                 overlayClassName={styles.modal_fondo}
             >
-                <h2>Alertas</h2>
+                <h1 className={styles.enunciado}>La siguientes tareas están próximas a <span className={styles.span_enunciado}>vencerse</span></h1>
+
+                <div className={styles.cards_container}>
                 {
-                    taskWithAlerts.map((task)=>{
+                    taskToShow.map((task,i)=>{
                         return(
-                            <h1>{task.title}</h1>
+                            <TodoCardAlert
+                                key={i}
+                                {...task}
+                            />
                         )
                     })
                 }
+                </div>
+                <button onClick={hangleGoToTodos} className={styles.btn_pendientes}>Ir a mis pendientes</button>
 
             </Modal>
 

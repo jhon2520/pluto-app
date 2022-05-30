@@ -1,6 +1,6 @@
 import React from 'react'
 import appImages from '../helpers/appImages'
-import HomeContactForm from './HomeContactForm'
+// import HomeContactForm from './HomeContactForm'
 import styles from "../css/HomeContact.module.css"
 
 const HomeContact = () => {
@@ -34,7 +34,7 @@ const HomeContact = () => {
                     </div>
                 </div>
             </section>
-
+{/* 
             <section className={styles.form_main_container}>
                 <div className={styles.form_info}>
                     <h2>Escríbenos</h2>
@@ -44,7 +44,7 @@ const HomeContact = () => {
                     <HomeContactForm />
                 </div>
 
-            </section>
+            </section> */}
         </div>
     )
 }

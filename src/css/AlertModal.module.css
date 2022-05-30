@@ -1,3 +1,5 @@
+@import url("./Const.css");
+
 .modal {
     background: white;
     border-radius: 5px;
@@ -5,19 +7,137 @@
     max-height: 620px;
     max-width: 500px;
     outline: none;
-    padding: 10px;
+    padding: 20px;
     height: 80vh;
     width: 80vw;
-    display: inline;
-
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3%;
 }
 
 
 .modal_fondo {
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.5);
     bottom: 0;
     left: 0;
     right: 0;
     top: 0;
     position: fixed;
+}
+
+.enunciado{
+    /* background-color: red; */
+    width: 100%;
+    font-size: var(--p-font-size);
+    text-align: center;
+    color: var(--color-morado-oscuro);
+}
+.span_enunciado{
+    font-weight: 800;
+    color: var(--color-eliminar);
+    font-size: var(--p-font-size);
+}
+
+.btn_pendientes{
+    border: none;
+    background: var(--color-morado-oscuro);
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: var(--border-radious-btn);
+    transition: 0.3s ease-in-out;
+}
+
+    .btn_pendientes:hover{
+        transform: translateY(-3px);
+        background-color: var(--color-morado);
+    }
+
+/* CARDS */
+
+.cards_container{
+    /* background-color: green; */
+    width: 100%;
+    height: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2%;
+    overflow-y: scroll;
+    padding: 10px 0;
+}
+
+.alert_card{
+    /* background-color: red; */
+    width: 40%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2%;
+    text-align: center;
+    gap: 2%;
+    border-radius: 6px;
+    border: 1px solid rgb(223, 240, 250);
+    -webkit-box-shadow: 19px 22px 79px 0px rgba(173,171,173,1);
+    -moz-box-shadow: 19px 22px 79px 0px rgba(173,171,173,1);
+    box-shadow: 19px 22px 79px 0px rgba(173,171,173,1);
+    transition: 0.3s ease-in-out;
+    
+}
+.alert_card:hover{
+    transform: translateY(-3px);
+}
+
+    .alert_card>h2:first-child{
+        /* background: yellow; */
+        width: 100%;
+        white-space:nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-size: 1.1rem;
+        font-weight: 600;
+        
+    }   
+    .alert_card>p{
+        /* background: green; */
+        width: 100%;
+        height: 4.5rem;
+        /* white-space:nowrap; */
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        font-size: 1.0rem;
+        font-weight: 400;
+        background: rgba(159, 240, 240, 0.338);
+    }
+    .alert_card>h2:nth-child(3){
+        background: rgba(253, 209, 253, 0.638);
+        width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-weight: 400;
+    }  
+    .alert_card>h2:nth-child(4){
+        background: rgb(250, 234, 204);
+        width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-weight: 400;
+
+    }  
+
+    .span{
+        color: orangered;
+        font-weight: 500;
+        font-size: 1.2rem;
+    }
+    
+.taks_undone{
+    color: red;
+    font-size: 1.2rem;
 }

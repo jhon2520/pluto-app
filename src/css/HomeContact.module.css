@@ -2,7 +2,7 @@
 
 .main_container{
     /* background: red; */
-    height: 100vh;
+    height: 40vh;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -72,6 +72,8 @@
     width: auto;
     cursor: pointer;
 }
+
+
 
 .icons_info>div>p{
     color: #fff;
