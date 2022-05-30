@@ -58,10 +58,18 @@
     }
 
 .img_up{
-    width: 60px;
+    width: 40px;
     position: fixed;
     right: 40px;
     bottom: 20px;
+    border-radius: 50%;
+    -webkit-box-shadow: 15px 15px 29px -11px rgba(0,0,0,5.75);
+    -moz-box-shadow: 15px 15px 29px -11px rgba(0,0,0,5.75);
+    box-shadow: 15px 15px 29px -11px rgba(0,0,0,5.75);
+    transition: 0.3s ease-in-out;
+}
+.img_up:hover{
+    transform: scale(1.1);
 }
 
 .horizontal{

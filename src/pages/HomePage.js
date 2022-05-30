@@ -7,7 +7,7 @@ import HomeSkills from '../components/HomeSkills'
 import HomeContact from '../components/HomeContact'
 import AlertTodoModal from '../components/AlertTodoModal'
 import { startSettingUndoneTaks } from '../actions/data.action'
-import { SetModalAlertOpend } from '../actions/ui.action'
+import { SetModalAlertOpend, setModalAlreadyOpen } from '../actions/ui.action'
 import validateDateToAlert from '../helpers/validateDateToAlert'
 
 
@@ -16,10 +16,11 @@ import validateDateToAlert from '../helpers/validateDateToAlert'
 
 const HomePage = () => {
     
+    const dispatch = useDispatch();
+    const {modalAlreadyOpen} = useSelector((state)=>state.ui)
     const {taks} = useSelector((state)=> state.data)
     const {taskWithAlerts} = taks
     let taskToShow = []
-    const dispatch = useDispatch();
 
     taskWithAlerts.forEach((task)=> {
         const days = validateDateToAlert(task.dateLimit);
@@ -28,16 +29,19 @@ const HomePage = () => {
 
     const cantidadAlertas = taskToShow.length;
 
-
     useEffect(() => {
         
         //TODO: Colocar que se carguen todos los gastos, ahorros y tareas con sus dispatch
         dispatch(startSettingUndoneTaks());
         
-        (cantidadAlertas > 0) && dispatch(SetModalAlertOpend())
+        // (cantidadAlertas > 0) && dispatch(SetModalAlertOpend())
         
+        if(cantidadAlertas>0 && !modalAlreadyOpen){
+            dispatch(setModalAlreadyOpen())
+            dispatch(SetModalAlertOpend())
+        }
 
-    }, [dispatch,cantidadAlertas]);
+    }, [dispatch,cantidadAlertas,modalAlreadyOpen]);
 
 
     return (

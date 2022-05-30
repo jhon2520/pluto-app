@@ -1,8 +1,33 @@
-import React from 'react'
+import React,{useState,useEffect} from 'react'
 import appImages from '../helpers/appImages'
 import styles from "../css/HomePage.module.css"
 
 const HomeMainInfo = () => {
+
+    //scroll position to render de up-img
+    const [scrollPosition, setScrollPostion] = useState(0);
+
+    const handleScroll = ()=>{
+        const position = window.scrollY;
+        setScrollPostion(position);
+    }
+   // console.log(scrollPosition);
+    
+    useEffect(() => {
+        window.addEventListener("scroll",handleScroll);
+        return()=>{
+            window.removeEventListener("scroll",handleScroll)
+        }
+    }, []);
+
+    const handleUpScrollPosition = ()=>{
+        console.log("click");
+        window.scrollTo({
+            top:0,
+            behavior:"smooth"
+        })
+    }
+
     return (
         <>
         <div className={styles.main_container}>
@@ -16,7 +41,10 @@ const HomeMainInfo = () => {
                 <img src={appImages("./main-img.png")} alt="" />
             </div>
         </div>
-        <img className={styles.img_up} src={appImages("./up-img.png")} alt="" />
+        {
+            (scrollPosition>150) && <img onClick={handleUpScrollPosition}  className={styles.img_up} src={appImages("./up-img.png")} alt="" />
+            
+        }
         <hr className={styles.horizontal} />
         </>
     )

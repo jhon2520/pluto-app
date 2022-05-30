@@ -1,7 +1,8 @@
 import TYPES from "../types/types";
 
 const initState = {
-    alertTodoOpen : false
+    alertTodoOpen : false,
+    modalAlreadyOpen : false
 }
 
 const uiReducer =(state = initState,action)=>{
@@ -16,6 +17,11 @@ const uiReducer =(state = initState,action)=>{
             return{
                 ...state,
                 alertTodoOpen:false
+            }
+        case TYPES.UISETALREADYOPENMODAL:
+            return{
+                ...state,
+                modalAlreadyOpen:true
             }
         default:
             return state;

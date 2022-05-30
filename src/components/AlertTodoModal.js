@@ -61,7 +61,7 @@ const AlertTodoModal = () => {
                 className={styles.modal}
                 overlayClassName={styles.modal_fondo}
             >
-                <h1 className={styles.enunciado}>La siguientes tareas están próximas a <span className={styles.span_enunciado}>vencerse</span></h1>
+                <h1 className={styles.enunciado}>La siguientes tareas están próximas a <span className={styles.span_enunciado}>vencerse o están vencidas</span></h1>
 
                 <div className={styles.cards_container}>
                 {

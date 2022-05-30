@@ -10,3 +10,8 @@ export const SetModalAlertClosed = ()=>{
         type:TYPES.UICLOSEALERTTODOMODAL
     }
 }
+export const setModalAlreadyOpen = ()=>{
+    return{
+        type:TYPES.UISETALREADYOPENMODAL
+    }
+}
