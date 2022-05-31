@@ -38,7 +38,7 @@
     }
 
     .grupoh>p{
-        color: var(--color-dark-gray);
+        color: var(--color-font);
         font-size: var(--p-font-size);
     }
 

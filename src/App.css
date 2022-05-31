@@ -50,3 +50,47 @@ html{
 .ReactModalPortal > div{
     opacity: 0;
 }
+
+/* THEME */
+body.light{
+    background: #fff;
+    --background: #fff;
+    --neg-background: #15133C;
+    --color-font: #525E75;
+    --neg-color-font: #fff;
+    --color-morado:#6334E3;
+    --color-verde:#006E8C;
+    --horizontal: 1px solid rgba(0, 0, 0, 0.15);
+    --hover-background :rgba(153, 191, 227, 0.427);
+
+    
+
+
+    
+    --color-verde-oscuro:#004f64;
+    --color-morado-oscuro:#46279b;
+    --color-eliminar:#890F0D;
+    --color-eliminar-oscuro:#640c0b;
+    
+    
+}
+body.dark{
+    background: #15133C;
+    --background: #15133C;
+    --neg-background: #fff;
+    --color-font: #fff;
+    --neg-color-font: #525E75;
+    --color-morado:#a283f9;
+    --color-verde:#4cacc7;
+    --horizontal: 1px solid rgba(239, 238, 238, 0.46);
+    --hover-background:rgba(201, 196, 196, 0.645);
+
+
+
+
+    --color-verde-oscuro:#004f64;
+
+    --color-morado-oscuro:#46279b;
+    --color-eliminar:#890F0D;
+    --color-eliminar-oscuro:#640c0b;
+}

@@ -31,7 +31,7 @@
         margin-bottom: 40px;
     }
     .text_container>p{
-        color: var(--color-ligth-gray);
+        color: var(--color-font);
         font-size: var(--p-font-size);
         text-align: justify;
         /* background: #006E8C; */
@@ -69,13 +69,12 @@
     transition: 0.3s ease-in-out;
 }
 .img_up:hover{
-    transform: scale(1.1);
+    transform: scale(1.2);
 }
 
 .horizontal{
     width: 80%;
     margin: auto;
     margin-top: 0px;
-    border: 1px solid rgba(0, 0, 0, 0.15);
-    
+    border: var(--horizontal)
 }

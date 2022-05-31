@@ -2,16 +2,18 @@ import React from 'react'
 import { NavLink,useNavigate } from 'react-router-dom'
 import appImages from '../helpers/appImages'
 import styles from "../css/Navbar.module.css"
-import {useDispatch} from "react-redux"
+import {useDispatch,useSelector} from "react-redux"
 import { startLogout } from '../actions/auth.action'
 import { spendCleaningLogout } from '../actions/spend.action'
 import { savingCleaningLogout } from '../actions/savings.actions'
+import DarkMode from './DarkMode'
 
 
 const Navbar = () => {
 
     const dispatch = useDispatch();
     const navigate = useNavigate();
+    const {isDarkMode} = useSelector((state)=> state.ui)
 
     const handleLogout = () =>{
         dispatch(startLogout())
@@ -19,10 +21,13 @@ const Navbar = () => {
         dispatch(savingCleaningLogout());
     }
 
+    console.log(isDarkMode)
+
     return (
         <>
             <div className={styles.nabvar_contianer}>
-                <img onClick={()=>navigate("/home")} src={appImages("./LogoMorado.png")} alt="" />
+            <DarkMode/>
+                <img onClick={()=>navigate("/home")} src={ isDarkMode ? appImages("./LogoBlanco.png") : appImages("./LogoMorado.png")} alt="" />
                 <nav className={styles.navbar}>
                     <ul>
                         <li><NavLink className={(data)=> data.isActive ? styles.active: styles.no_active} to="/home">Inicio</NavLink></li>

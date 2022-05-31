@@ -1,6 +1,7 @@
 import React,{useState,useEffect} from 'react'
 import appImages from '../helpers/appImages'
 import styles from "../css/HomePage.module.css"
+import DarkMode from './DarkMode';
 
 const HomeMainInfo = () => {
 
@@ -31,6 +32,7 @@ const HomeMainInfo = () => {
     return (
         <>
         <div className={styles.main_container}>
+            {/* <DarkMode/> */}
             <div className={styles.text_container}>
                 <h2>MANTÉN TUS FINANZAS ALMACENADAS</h2>
                 <p>Con esta aplicación podrás llevar un registro de todos los gastos y ahorros que realices. También puedes ver en un <span>Dashboard</span> todas tus operaciones de forma cómoda</p>

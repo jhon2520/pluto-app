@@ -40,7 +40,7 @@ const ToDoPage = () => {
         <div className={styles.page_todo}>
             <Navbar/>
             <MainSavingSpend
-                img={appImages("./main4-img.jpg")}
+                img={appImages("./main4-img.png")}
                 titulo = {titulo}
                 parrafo = {parrafo}
             

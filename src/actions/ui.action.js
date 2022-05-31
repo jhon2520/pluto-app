@@ -15,3 +15,17 @@ export const setModalAlreadyOpen = ()=>{
         type:TYPES.UISETALREADYOPENMODAL
     }
 }
+
+export const setDarkTheme = ()=>{
+    // console.log("se hizo el tema light");
+    return{
+        type:TYPES.UISETDARKMODE
+    }
+}
+
+export const setLightTheme = ()=>{
+    // console.log("se hizo el tema dark");
+    return{
+        type:TYPES.UISETLIGHTMODE
+    }
+}

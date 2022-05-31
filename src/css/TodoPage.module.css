@@ -1,16 +1,14 @@
 @import url("Const.css");
 
 .main_container{
-    /* background: red; */
     height: 100vh;
     padding:var(--main-padding);
-    width: 100vw;
+    width: 100%;
     display: flex;
     padding: 0;
     margin: 0;
 }
 .main_container>.todo_container{
-    /* background: yellow; */
     height: 108vh;
     width: 85%;
     margin: auto;
@@ -19,24 +17,16 @@
 
 .table_container{
     width: 100%;
-    /* background: green; */
     display: flex;
     align-items: center;
     justify-content: center;
     height: 108vh;
 }
 
-/* .page_todo{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-} */
-
-    
 
     .titulo_listas{ 
         
-        color: var(--color-dark-gray);
+        color: var(--color-font);
         font-size: var(--h3-font-size);
         margin-bottom: 45px;
         margin-top: 45px;
@@ -53,36 +43,27 @@
     }
     
     .table>thead>tr>th{
-        background: #FFF;
-        border-bottom: 1px solid rgba(166, 152, 152, 0.749);
-        color: var(--color-dark-gray);
+        background: var(--background);
+        border-bottom: 1px solid rgba(219, 218, 218, 0.749);
+        color: var(--color-font);
         font-weight: bolder;
         font-size: calc(var(--p-font-size) - 4px);
-        /* background: green; */
         
     }
     
     .table>thead>tr>th:nth-child(2){
-        /* background: red; */
         width: 20%;
-        
-    
 
     }
 
     .table>tbody>tr>td:nth-child(2){
-        /* background: purple; */
         padding: 10px;
         max-height: 80px;
         height: 80px;
     }
 
-    /* .table>tbody>tr>td:hover{
-        background: rgba(0, 0, 0, 0.02);
-    } */
 
 .description{
-    /* background: red; */
     width: 100%;
     border: none;
     display: flex;
@@ -91,7 +72,7 @@
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: pre-wrap;
-    color: var(--color-dark-gray);
+    color: var(--color-font);
     font-size: calc(var(--p-font-size) - 7px);
     padding: 0 5px;
     text-align: justify;
@@ -103,18 +84,21 @@
     
 }
 .select,.fecha{
-    
     font-weight: 500;
 }
 
 .body_row{
-    /* background: red; */
     max-height: 80px;
     height: 80px;
-    border-bottom: 1px solid rgb(215, 212, 212);
+    border-bottom: 1px solid rgba(215, 212, 212, 0.363);
     font-weight: bolder;
-
+    color: var(--color-font);
 }
+
+/* .body_row:hover{
+    background: red !important;
+} */
+
 .body_row_complete{
     text-decoration: line-through;
 }
@@ -135,9 +119,13 @@
 }
 
     .body_row>th,.body_row>td{
-        color: var(--color-dark-gray); 
+        color: var(--color-font);
         font-size: calc(var(--p-font-size) - 7px);
+        background: var(--background);
     }
+
+        
+
         .body_row>th,.body_row>td:first-child{
             font-weight: 800;
         }
@@ -150,18 +138,18 @@
 
     }
 
-    
+
+
     .body_row>td>button>.icono_editar,
     .body_row>td>button>.icono_eliminar{
-        /* background: purple; */
         height: 50%;
         width: 55%;
         padding: 10px;
         border-radius: 6px;
         transition: 0.3s ease-in-out;
-        -webkit-box-shadow: 6px 6px 13px -1px rgba(204,202,204,1);
-        -moz-box-shadow: 6px 6px 13px -1px rgba(204,202,204,1);
-        box-shadow: 6px 6px 13px -1px rgba(204,202,204,1);
+        -webkit-box-shadow: 1px 3px 6px -1px rgba(204,202,204,1);
+        -moz-box-shadow: 1px 3px 6px -1px rgba(204,202,204,1);
+        box-shadow: 4px 2px 3px -1px rgba(204, 202, 204, 0.37);
     }
 
     .body_row>td>button>.icono_editar:hover,
@@ -177,10 +165,11 @@
         border-radius: 6px;
         color: #fff;
         transition: 0.3s ease-in-out;
-        -webkit-box-shadow: 6px 6px 13px -1px rgba(204,202,204,1);
-        -moz-box-shadow: 6px 6px 13px -1px rgba(204,202,204,1);
-        box-shadow: 6px 6px 13px -1px rgba(204,202,204,1);
+        -webkit-box-shadow: 1px 3px 6px -1px rgba(204,202,204,1);
+        -moz-box-shadow: 1px 3px 6px -1px rgba(204,202,204,1);
+        box-shadow: 4px 2px 3px -1px rgba(204, 202, 204, 0.37);
         font-size: calc(var(--p-font-size) - 7px);
+        border: 1px solid #fff;
     }
 
     .body_row>td>.btn_terminado_done{
@@ -198,10 +187,12 @@
         border-top: 1.5px solid rgb(72, 192, 180);
         border-left: 0.5px solid rgb(72, 192, 180);
         border-right: 0.5px solid rgb(72, 192, 180);
+        background:#fff
     }
 
     .body_row>td>button>.icono_editar_block{
         display: none;
+        
     }
 
     .body_row>td>button>.icono_eliminar{
@@ -210,23 +201,24 @@
         border-left: 1px solid rgb(71, 73, 73);
         border-top: 1px solid rgb(71, 73, 73);
         border-right: 1px solid rgb(71, 73, 73);
+        background:#fff
     }
 
 
 .add_new_todo_btn{
     position: fixed;
     background: var(--color-morado);
-    width: 60px;
-    height: 60px;
+    width: 40px;
+    height: 40px;
     border: none;
     border-radius: 50%;
     color: #fff;
     bottom: 35px;
     right: 35px;
     transition: 0.3s ease-in-out;
-    -webkit-box-shadow: 6px 6px 13px -1px rgba(204,202,204,1);
-    -moz-box-shadow: 6px 6px 13px -1px rgba(204,202,204,1);
-    box-shadow: 6px 6px 13px -1px rgba(204,202,204,1);
+    -webkit-box-shadow: 6px 6px 6px -1px rgba(204,202,204,1);
+    -moz-box-shadow: 6px 6px 6px -1px rgba(204,202,204,1);
+    box-shadow: 6px 6px 6px -1px rgba(204,202,204,1);
 }
 
 .add_new_todo_btn:hover{
