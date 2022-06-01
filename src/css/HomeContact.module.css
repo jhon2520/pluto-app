@@ -2,7 +2,7 @@
 
 .main_container{
     /* background: red; */
-    height: 40vh;
+    height: 50vh;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -17,14 +17,14 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    height: 40vh;
+    height: 50vh;
     
 }
 .contacto_container>h2{
-    font-size: var(--h2-font-size);
+    font-size: var(--h3-font-size);
     color: #fff;
-    margin-top: 10px;
-    margin-bottom: 15px;
+    margin: 80px;
+
 }
 
 .contacto_container>.icons_info>div>img{
@@ -38,6 +38,8 @@
     height: 30vh;
     width: 70%;
     margin-bottom: 15px;
+    align-items: center;
+    justify-content: center;
 }
 
 .icons_info>div{
@@ -52,6 +54,9 @@
     border-right: 1px solid rgba(255, 255, 255, 0.582);
     
 }
+.icons_info>div:last-child{
+    border-right: none;
+}
 
 .icons_info>div>a{
     /* background: yellow; */
@@ -61,15 +66,20 @@
     align-items: center;
     justify-content: center;
 }       
-.icons_info>div>a>img{
-    /* background: green; */
-    width: 40%;
-    height: auto;
-}       
+
+.contact_icon{
+    color: #fff;
+    height: 40px;
+    width: 40px;
+    transition: 0.3s ease-in-out;
+}
+.contact_icon:hover{
+    transform: scale(1.1);
+}
 
 .icons_info>div>img{
-    height: 15%;
-    width: auto;
+    height: auto;
+    width: 30px;
     cursor: pointer;
 }
 

@@ -5,6 +5,7 @@
     height: 88vh;
     padding: 40px;
     display: flex;
+    
 }
 
 .section{
@@ -12,6 +13,7 @@
     align-items: center;
     justify-content: center;
     gap: 3%;
+    background: rgba(75, 21, 190, 0.057);
 }
 
 
@@ -46,6 +48,6 @@
     width: 80%;
     margin: auto;
     margin-top: 20px;
-    border: 1px solid rgba(0, 0, 0, 0.15);
+    border: var(--horizontal);
     
 }

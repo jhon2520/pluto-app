@@ -7,7 +7,7 @@ import { useNavigate,useParams } from 'react-router-dom'
 import successMessage from '../helpers/successMessage'
 import formNewSavingValidation from '../helpers/validateNewSaving'
 import errorMessage from '../helpers/errorMessage'
-import { setTotalSave, startSettingMostValueSaved, startSettingTotalSave } from '../actions/data.action'
+import { startSettingTotalSave } from '../actions/data.action'
 
 const NewSavingForm = () => {
 

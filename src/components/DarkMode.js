@@ -1,6 +1,7 @@
 import React from 'react'
 import { useDispatch } from 'react-redux';
 import { setDarkTheme, setLightTheme } from '../actions/ui.action';
+import { IoIosMoon,IoIosSunny } from "react-icons/io";
 
 const DarkMode = () => {
 
@@ -41,11 +42,26 @@ const DarkMode = () => {
 
 
     return (
-        <button
-            className={theme==="dark" ? clickedClass : ""}
-            id="darkMode"
-            onClick={switchTheme}
-        >Dark mode</button>
+    <div className='dark_container'>
+        {
+            (theme===darkTheme) 
+            ?         
+                <IoIosSunny
+                className={theme==="dark" ? `${clickedClass} ${"btn_theme"}` : "btn_theme"}
+                id="darkMode"
+                onClick={switchTheme}
+                />
+            : 
+                <IoIosMoon
+                className={theme==="dark" ? `${clickedClass} ${"btn_theme"}` : "btn_theme"}
+                id="darkMode"
+                onClick={switchTheme}
+                />  
+        }
+        
+
+    </div>
+
     )
 }
 

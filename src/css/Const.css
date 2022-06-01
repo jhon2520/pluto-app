@@ -1,11 +1,11 @@
 :root{
     /* --color-verde:#006E8C; */
-    --color-verde-oscuro:#004f64;
+    /* --color-verde-oscuro:#004f64; */
     /* --color-morado:#6334E3; */
     --color-morado-oscuro:#46279b;
     --color-eliminar:#890F0D;
     --color-eliminar-oscuro:#640c0b;
-    --color-ligth-gray:#789395;
+    /* --color-ligth-gray:#789395; */
     /* --color-dark-gray:#525E75; */
     --h1-font-size: 3rem;
     --h2-font-size: 2.3rem;
@@ -13,7 +13,7 @@
     --p-font-size: 1.3rem;
     --main-padding:20px;
     --font-family:"poppins";
-    --heigth-button-1:35px;
+    --heigth-button-1:30px;
     --nav-bar-height:10vh;
     --gradient:linear-gradient(45deg, #49a09d, #5f2c82);
     --gradient-saving:linear-gradient(125deg, #5f2c82,#49a09d);

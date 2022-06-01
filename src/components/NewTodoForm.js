@@ -44,8 +44,6 @@ const NewTodoForm = () => {
     }
 
     const onChange = (e)=>{
-        console.log(e.target.value);
-        console.log({hasAlert});
         handleChange(e)
     }
 
@@ -99,6 +97,7 @@ const NewTodoForm = () => {
                     onKeyPress={handleOnKeyPress}
                     value={description}
                     style={{resize:"none"}}
+                    placeholder="Describa la tarea que va a realizar"
                     >
                 </textarea>
                 <h3>Fecha de registro</h3>

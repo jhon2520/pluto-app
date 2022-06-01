@@ -7,7 +7,7 @@ import HomeSkills from '../components/HomeSkills'
 import HomeContact from '../components/HomeContact'
 import AlertTodoModal from '../components/AlertTodoModal'
 import { startSettingUndoneTaks } from '../actions/data.action'
-import { SetModalAlertOpend, setModalAlreadyOpen } from '../actions/ui.action'
+import { setDarkTheme, SetModalAlertOpend, setModalAlreadyOpen } from '../actions/ui.action'
 import validateDateToAlert from '../helpers/validateDateToAlert'
 
 
@@ -42,6 +42,15 @@ const HomePage = () => {
         }
 
     }, [dispatch,cantidadAlertas,modalAlreadyOpen]);
+
+    useEffect(() => {
+        if(localStorage.getItem("theme")){
+        
+            const theme = localStorage.getItem("theme");
+            (theme === "dark") && dispatch(setDarkTheme())
+            
+        }
+    }, [dispatch]);
 
 
     return (

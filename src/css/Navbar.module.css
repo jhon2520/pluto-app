@@ -28,18 +28,17 @@
         align-items: center;
         justify-content: flex-end;
         height: var(--nav-bar-height);
-        gap: 30px;
+        gap: 20px;
 
         }
 
         .navbar>ul>li{
             text-decoration: none;
-            width: 160px;
-            height: 70%;
+            width: 150px;
+            height: 60%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: var(--h3-font-size) ;
             transition: 0.3s ease;
             border-radius: 4px;
         }
@@ -54,7 +53,8 @@
         align-items: center;
         justify-content: center;
         color: var(--color-font);
-        box-shadow: inset 0 0 0 0 rgba(206, 150, 241, 0.263);;
+        box-shadow: inset 0 0 0 0 rgba(188, 118, 232, 0.47);
+        font-weight: 400;
         
         
     }
@@ -62,39 +62,40 @@
         /* background: var(--hover-background); */
         /* transform: translateY(-5px); */
         cursor: pointer;
-        box-shadow: inset 160px 0 0 0 rgba(206, 150, 241, 0.263);
+        box-shadow: inset 150px 0 0 0 rgba(188, 118, 232, 0.47);
+        font-size: 1.1rem ;
 
     }
     
     
     .active{
-        border-bottom: 3px solid var(--color-morado-oscuro);
+        /* border-bottom: 3px solid var(--color-morado-oscuro); */
         background-color: var(--neg-background);
         color: var(--neg-color-font);
 
     }
     
     .no_active{
-        background-color: rgba(206, 150, 241, 0.263);
+        background-color: rgba(206, 153, 239, 0.327);
 }
 
 .btn_salir{
     border: none;
     background-color: var(--color-morado);
-    padding: 20px;
+    padding: 10px;
     width: 120px;
-    border-radius: 10px;
+    border-radius: 4px;
     color: #fff;
-    font-size: var(--p-font-size)  ;
+    font-size: 1rem ;
     transition: 0.5s ease-in-out;
     box-shadow: inset 120px 0 0 0 0 rgba(183, 95, 238, 0.701) ;
+    height: 50%;
 
 }
     .btn_salir:hover{
-        /* background-color: var(--color-morado-oscuro);
-        transform: translateY(-5px); */
         cursor: pointer;
         box-shadow: inset 120px 0 0 0 rgba(183, 95, 238, 0.701) ;
+        font-size: 1.1rem ;
     }
 
 .horizontal{

@@ -1,7 +1,7 @@
 @import url("./Const.css");
 
 .modal {
-    background: white;
+    background: var(--background);
     border-radius: 5px;
     color: rgb(51, 51, 51);
     max-height: 620px;
@@ -15,6 +15,7 @@
     align-items: center;
     justify-content: center;
     gap: 3%;
+    border:  1px solid rgba(126, 124, 124, 0.759);
 }
 
 
@@ -32,7 +33,7 @@
     width: 100%;
     font-size: var(--p-font-size);
     text-align: center;
-    color: var(--color-morado-oscuro);
+    color: var(--color-font);
 }
 .span_enunciado{
     font-weight: 800;
@@ -67,6 +68,7 @@
     gap: 2%;
     overflow-y: scroll;
     padding: 10px 0;
+    color: var(--neg-color-font);
 }
 
 .alert_card{
@@ -82,10 +84,11 @@
     gap: 2%;
     border-radius: 6px;
     border: 1px solid rgb(223, 240, 250);
-    -webkit-box-shadow: 19px 22px 79px 0px rgba(173,171,173,1);
-    -moz-box-shadow: 19px 22px 79px 0px rgba(173,171,173,1);
-    box-shadow: 19px 22px 79px 0px rgba(173,171,173,1);
+    -webkit-box-shadow: 5px 10px 16px 0px rgba(173, 171, 173, 0.426);
+    -moz-box-shadow: 5px 10px 16px 0px rgba(173, 171, 173, 0.441);
+    box-shadow: 5px 10px 16px 0px rgba(173, 171, 173, 0.341);
     transition: 0.3s ease-in-out;
+    background: var(--neg-background);
     
 }
 .alert_card:hover{

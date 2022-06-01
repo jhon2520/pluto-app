@@ -99,7 +99,7 @@ const NewSpendForm = () => {
                 <input 
                     type="number" 
                     name='value'
-                    placeholder='valor'
+                    placeholder=''
                     autoComplete='off'
                     value={value}
                     onChange={handleChange}

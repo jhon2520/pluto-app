@@ -5,7 +5,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
     gap: 10px;
     height: 100vh;
 }
@@ -27,14 +27,19 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
+    transition: all 1s ease-out;
 }
+
+
+
     .seccion>img{
-        height: 80%;
+        height: 55%;
         transition: 0.3s ease-in-out;
         /* background: green; */
     }
         .seccion>img:hover{
-            transform: scale(1.1);
+            filter:brightness(85%) contrast(90%);
         }
     .seccion>div{
         /* background: purple; */
@@ -47,7 +52,10 @@
         gap: 20px;
         padding: 20px;
         color: var(--color-font);
+        position: relative;
+        
     }
+
     .seccion>div>p{
         
         font-size: var(--p-font-size)
@@ -64,16 +72,17 @@
         color: #fff;
         height: var(--heigth-button-1);
         border: none;
-        /* width: 150px; */
-        border-radius: 10px;
-        transition: 0.3s ease;
+        border-radius: 4px;
+        transition: 0.3s ease-in-out;
         font-size:  calc(var(--p-font-size) - 3px);
         padding: 0 var(--main-padding);
+        box-shadow: inset 0 0 0 0 var(--color-verde);
+        width: 200px;
     }
 
     .seccion>div>button:hover{
-        background: var(--color-verde-oscuro);
-        transform: translateY(-5px);
+        box-shadow: inset 200px 0 0  var(--color-verde-oscuro);
+        /* transform: translateY(-5px); */
     }
 
     .horizontal{

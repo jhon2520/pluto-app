@@ -2,6 +2,7 @@ import React from 'react'
 import appImages from '../helpers/appImages'
 // import HomeContactForm from './HomeContactForm'
 import styles from "../css/HomeContact.module.css"
+import { IoLogoWhatsapp,IoMdGlobe } from "react-icons/io";
 
 const HomeContact = () => {
     return (
@@ -12,8 +13,8 @@ const HomeContact = () => {
 
                 <div className={styles.icons_info}>
                     <div>
-                        <img src={appImages("./location-img.png")} alt="imagen" />
-                        <p>Medellín - Colombia</p>
+                        <IoMdGlobe className={styles.contact_icon}/>
+                        <p>Medellín - Colombia - 2022 </p>
                     </div>
                     <div>
                         {/* poner enlace a whatsapp */}
@@ -21,16 +22,9 @@ const HomeContact = () => {
                             target="_blank"
                             rel='noreferrer'
                             href="https://api.whatsapp.com/send?phone=3053776914&text='Hola, estoy usando tu aplicación y tengo la siguiente duda'">
-                            <img src={appImages("./whatsapp-img.png")} alt="imagen" />
+                            <IoLogoWhatsapp className={styles.contact_icon}/>
                         </a>
-                        <p>Puedes contactarnos por Whatsapp seleccionado el ícono</p>
-                    </div>
-                    <div>
-                        <img src={appImages("./email-img.png")} alt="imagen" />
-                        <p>Para cualquier comunicación directa puedes contactarme al
-                            correo <span>jhonmunozromero@gmail.com</span>
-                            {/* TODO: Crear opción para copiar al portapales el correo */}
-                        </p>
+                        <p>Contáctanos por Whatsapp</p>
                     </div>
                 </div>
             </section>

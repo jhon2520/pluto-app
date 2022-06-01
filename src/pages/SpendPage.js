@@ -11,7 +11,7 @@ import appImages from '../helpers/appImages'
 const SpendPage = () => {
     
     const titulo = "MANTÉN TUS GASTOS ORGANIZADOS"
-    const parrafo = "Aquí puedes llevar el registro de tus gastos, revisar el histórico de los mismos y editar la información"
+    const parrafo = "Aquí puedes llevar el registro de tus gastos, editar la información almacenada y exportar en un archivo de excel"
 
     const dispatch = useDispatch();
     const state = useSelector(state=>state)

@@ -14,7 +14,7 @@ const MainSavingSpend = ({img,titulo,parrafo}) => {
                     </hgroup>
                 </section>
             </div>
-            <hr className={styles.horizontal} />
+            {/* <hr className={styles.horizontal} /> */}
         </>
     )
 }
