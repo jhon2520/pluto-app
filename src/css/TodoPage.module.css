@@ -27,7 +27,7 @@
     .titulo_listas{ 
         
         color: var(--color-font);
-        font-size: var(--h3-font-size);
+        font-size: var(--h2-font-size);
         margin-bottom: 45px;
         margin-top: 45px;
         text-align: center;
@@ -44,10 +44,11 @@
     
     .table>thead>tr>th{
         background: var(--background);
-        border-bottom: 1px solid rgba(219, 218, 218, 0.749);
+        border-bottom: 1px solid var(--line-table);
         color: var(--color-font);
         font-weight: bolder;
-        font-size: calc(var(--p-font-size) - 4px);
+        font-size: calc(var(--p-font-size) - 2px);
+        transition: all 0.3s ease-in-out;
         
     }
     
@@ -73,7 +74,7 @@
     text-overflow: ellipsis;
     white-space: pre-wrap;
     color: var(--color-font);
-    font-size: calc(var(--p-font-size) - 7px);
+    font-size: calc(var(--p-font-size) - 6px);
     padding: 0 5px;
     text-align: justify;
     max-height: 80px;
@@ -90,7 +91,7 @@
 .body_row{
     max-height: 80px;
     height: 80px;
-    border-bottom: 1px solid rgba(215, 212, 212, 0.363);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.363);
     font-weight: bolder;
     color: var(--color-font);
 }
@@ -109,19 +110,22 @@
 
 
 .body_row:hover{
-    background: rgba(0, 0, 0, 0.12);
+    background: rgba(0, 0, 0, 0.05);
+
 }
 
-
 .body_row:last-child{
-    /* background: green; */
     margin-bottom: 50px;
 }
 
     .body_row>th,.body_row>td{
         color: var(--color-font);
-        font-size: calc(var(--p-font-size) - 7px);
+        font-size: calc(var(--p-font-size) - 6px);
         background: var(--background);
+    }
+    .body_row>th,.body_row>td:hover{
+        background: rgba(102, 102, 102, 0.07);
+        
     }
 
         
@@ -135,59 +139,53 @@
         height: 80%;
         width: 80px;
         border: none;
-
     }
-
-
 
     .body_row>td>button>.icono_editar,
     .body_row>td>button>.icono_eliminar{
-        height: 50%;
-        width: 55%;
+        height: 60%;
+        width: 60%;
         padding: 10px;
-        border-radius: 6px;
+        border-radius: 5%;
         transition: 0.3s ease-in-out;
-        -webkit-box-shadow: 1px 3px 6px -1px rgba(204,202,204,1);
-        -moz-box-shadow: 1px 3px 6px -1px rgba(204,202,204,1);
-        box-shadow: 4px 2px 3px -1px rgba(204, 202, 204, 0.37);
     }
 
     .body_row>td>button>.icono_editar:hover,
     .body_row>td>button>.icono_eliminar:hover{
-        transform: translateY(-5px);
+        transform: rotate(-45deg)
+        
     }
 
     .body_row>td>.btn_terminado{
-        /* background: red; */
-        background: var(--color-morado);
-        border: none;
-        padding: 6px 6px;
-        border-radius: 6px;
-        color: #fff;
+        border-radius: 50%;
+        height: 50px;
+        width: 50px;
+        color: var(--color-ok);
         transition: 0.3s ease-in-out;
-        -webkit-box-shadow: 1px 3px 6px -1px rgba(204,202,204,1);
-        -moz-box-shadow: 1px 3px 6px -1px rgba(204,202,204,1);
-        box-shadow: 4px 2px 3px -1px rgba(204, 202, 204, 0.37);
-        font-size: calc(var(--p-font-size) - 7px);
-        border: 1px solid #fff;
+    }
+    .body_row>td>.btn_terminado:hover{
+        transform: rotate(-45deg);
     }
 
     .body_row>td>.btn_terminado_done{
-        background: var(--color-eliminar);    
+        border-radius: 50%;
+        height: 60px;
+        width: 60px;
+        color: var(--color-eliminar-todo);
+        transition: 0.3s ease-in-out; 
     }
 
-    .body_row>td>.btn_terminado:hover{
-        transform: translateY(-5px);
+    .body_row>td>.btn_terminado_done:hover{
+        transform: rotate(-45deg);
+        
     }
-
+    
 
     .body_row>td>button>.icono_editar{
-        color: rgb(72, 192, 180) ;
-        border-bottom: 1.5px solid rgb(72, 192, 180);
-        border-top: 1.5px solid rgb(72, 192, 180);
-        border-left: 0.5px solid rgb(72, 192, 180);
-        border-right: 0.5px solid rgb(72, 192, 180);
-        background:#fff
+        color: rgb(53, 145, 135) ;
+        border: 2px solid rgb(53, 134, 145);
+        background:none;
+        border-radius: 50%;
     }
 
     .body_row>td>button>.icono_editar_block{
@@ -196,35 +194,34 @@
     }
 
     .body_row>td>button>.icono_eliminar{
-        color: rgb(58, 63, 63) ;
-        border-bottom: 1px solid rgb(71, 73, 73);
-        border-left: 1px solid rgb(71, 73, 73);
-        border-top: 1px solid rgb(71, 73, 73);
-        border-right: 1px solid rgb(71, 73, 73);
-        background:#fff
+        color: rgb(153, 153, 153);
+        border-radius: 50%;
+        border:  2px solid rgb(153, 153, 153);
+        
     }
 
 
 .add_new_todo_btn{
     position: fixed;
-    background: var(--color-morado);
+    /* background: var(--color-morado-oscuro); */
     width: 40px;
     height: 40px;
     border: none;
     border-radius: 50%;
-    color: #fff;
+    color: var(--color-ok);
     bottom: 35px;
     right: 35px;
     transition: 0.3s ease-in-out;
-    -webkit-box-shadow: 6px 6px 6px -1px rgba(204,202,204,1);
-    -moz-box-shadow: 6px 6px 6px -1px rgba(204,202,204,1);
-    box-shadow: 6px 6px 6px -1px rgba(204,202,204,1);
+    -webkit-box-shadow: 6px 6px 6px -1px rgba(0,0,0,0.1);
+    -moz-box-shadow: 6px 6px 6px -1px rgba(0,0,0,0.1);
+    box-shadow: 6px 6px 6px -1px rgba(0,0,0,0.1);
+    /* border: 1px solid #0ff; */
 }
 
 .add_new_todo_btn:hover{
 
-    transform: translateY(-5px);
-    background: var(--color-morado-oscuro) ;
+    transform: rotate(90deg);
+    /* background: var(--color-morado) ; */
 }
 
 .btn_container{
@@ -238,9 +235,9 @@
 }
 
 .btn_container:hover:before{
-    content: "Agregar tarea ↑";
+    content: "+1";
     position: fixed;
-    color: var(--color-ligth-gray);
+    color: var(--neg-background);
     bottom: 30px;
     right: 25px;
     width: 100px;

@@ -15,13 +15,15 @@ const HomeMainInfo = () => {
         const position = window.scrollY;
         setScrollPostion(position);
     }
+
+    //TODO:Cambiar esto por algo más eficiente
     
-    useEffect(() => {
-        window.addEventListener("scroll",handleScroll);
-        return()=>{
-            window.removeEventListener("scroll",handleScroll)
-        }
-    }, []);
+    // useEffect(() => {
+    //     window.addEventListener("scroll",handleScroll);
+    //     return()=>{
+    //         window.removeEventListener("scroll",handleScroll)
+    //     }
+    // }, []);
 
     const handleUpScrollPosition = ()=>{
         window.scrollTo({
@@ -46,11 +48,10 @@ const HomeMainInfo = () => {
         </div>
         {
             (scrollPosition>350) && <BsFillArrowUpCircleFill onClick={handleUpScrollPosition}  className={styles.img_up}/>
-            
         }
         <hr className={styles.horizontal} />
         </>
     )
 }
 
-export default HomeMainInfo
+export default React.memo(HomeMainInfo)

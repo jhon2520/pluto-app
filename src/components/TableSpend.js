@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useEffect,useState} from 'react'
 import tables from "../css/Tables.module.css"
 import useTable from '../hooks/useTable'
 import NavPagination from './NavPagination'
@@ -19,6 +19,7 @@ const TableSpend = () => {
     const state = useSelector(state=>state)
     const {spends} = state.spend
     const [paginated,pages,pagination,currentPage] = useTable(spends)
+    const [isLoading, setIsLoading] = useState(true)
 
     const handleNewSpend = () =>{
         navigate("/spend/new")
@@ -39,7 +40,18 @@ const TableSpend = () => {
         })
     }
 
+    // useEffect(() => {
+    //     console.log(isLoading)
+    //     dispatch(startSettingDataSpent())
+    //     console.log("efecto disparado");
+    //     setIsLoading(false);
+    // }, [dispatch,isLoading]);
 
+
+
+    // if(isLoading){
+    //     return(<h1>Espere.....................................</h1>)
+    // }
 
     return (
         <div className={tables.tabla_container}>

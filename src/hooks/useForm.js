@@ -7,7 +7,6 @@ const useForm = (initState = {}) =>{
     const handleSubmit = (e)=>{
         e.preventDefault();
         if(e.keyCode === 13){
-            console.log("se presionó enter");
             e.preventDefault();
         }
     }

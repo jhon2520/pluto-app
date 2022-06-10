@@ -1,4 +1,4 @@
-import React,{useState,useEffect} from 'react'
+import React,{useState,useEffect,useRef} from 'react'
 import styles from "../css/TodoPage.module.css"
 import { FaRegEdit } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
@@ -11,21 +11,26 @@ import {startDeletingTodo,startDoneTodo} from "../actions/todo.action";
 import questionMessage from '../helpers/questionMessage';
 import successMessage from '../helpers/successMessage';
 import { startSettingUndoneTaks } from '../actions/data.action';
+import { TiInputChecked,TiDelete } from "react-icons/ti";
 
 
 
-const ToDoItemsList = ({title,description}) => {
+
+
+const ToDoItemsList = () => {
     
+    console.log("tabla reenderizada");
     
     const navigate = useNavigate();
     const dispatch = useDispatch();
-    const state = useSelector(state=> state)
+     const state = useSelector(state=> state)
     const {todos:tasks} = state.todo
 
     const [todos, setTodos] = useState(null);
     const [isLoading,setIsLoading] = useState(true);
+    const refButton = useRef();
 
-    const [paginated,pages,pagination,currentPage] = useTable(todos)    
+    const [paginated,pages,pagination,currentPage] = useTable(todos);
     
     const handleNewTodo = () =>{
         navigate("/todo/new")
@@ -47,6 +52,8 @@ const ToDoItemsList = ({title,description}) => {
         const task = tasks.find((task)=>task.id === id)
         dispatch(startDoneTodo(id,task))
         dispatch(startSettingUndoneTaks())
+        //toggle class
+        //refButton.current.classList.toggle("PRUEBA");
     }
 
     const handleEdit =(idTodo)=>{
@@ -56,7 +63,7 @@ const ToDoItemsList = ({title,description}) => {
     useEffect(() => {
         
         setTodos(tasks)
-        console.log();
+        // console.log(refButton.current);
         setIsLoading(false)
 
     }, [tasks]);
@@ -91,18 +98,17 @@ const ToDoItemsList = ({title,description}) => {
                         {
                             paginated?.map((todo)=>{
                                 return(
-
                                     <tr className={ todo.done ?  `${styles.body_row} ${styles.body_row_complete}`: styles.body_row } key={todo.id}>
                                         <td>{todo.title}</td>
                                         <td><p className={styles.description}>{todo.description}</p></td>
                                         <td className={styles.fecha}>{todo.date}</td>
                                         <td className={styles.fecha}>{todo.dateLimit}</td>
                                         <td className={styles.select}>{(todo.hasAlert === "1") ? "Si": "No"}</td>
-                                        <td><button onClick={()=>changeStatusTask(todo.id)} className={todo.done ? styles.btn_terminado : `${styles.btn_terminado} ${styles.btn_terminado_done}`}>{ todo.done ? "concluida":"Inconclusa"}</button></td>
+                                        {/* <td><button onClick={()=>changeStatusTask(todo.id)} className={todo.done ? styles.btn_terminado : `${styles.btn_terminado} ${styles.btn_terminado_done}`}>{ todo.done ? <TiInputChecked />:<TiDelete />}</button></td> */}
+                                        <td ref={refButton}>{todo.done ? <TiInputChecked onClick={()=>changeStatusTask(todo.id)} className={styles.btn_terminado}/> : <TiDelete onClick={()=>changeStatusTask(todo.id)}className={styles.btn_terminado_done}/>}</td>
                                         <td><button><FaRegEdit onClick={()=>handleEdit(todo.id)} className={todo.done ? `${styles.icono_editar} ${styles.icono_editar_block}`: styles.icono_editar}/></button></td>
                                         <td><button><MdDelete className={styles.icono_eliminar} onClick={()=>handleDelete(todo.id)}/></button></td>
                                     </tr>
-
                                 );
                             })
                         }
@@ -118,7 +124,7 @@ const ToDoItemsList = ({title,description}) => {
             />
             
             <div className={styles.btn_container}>
-                <button onClick={handleNewTodo}><FaPlus className={styles.add_new_todo_btn}/></button>
+                <FaPlus onClick={handleNewTodo} className={styles.add_new_todo_btn}/>
             </div>
         </div>
     )

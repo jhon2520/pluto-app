@@ -98,7 +98,7 @@ html{
         display: flex;
         flex-direction: column;
         justify-content: center;
-        align-items: flex-start;
+        align-items: center;
         padding: var(--main-padding);
         padding-left: 30px;
         gap: 1%;
@@ -108,65 +108,64 @@ html{
     
     .form_login>h3{
         font-size: var(--p-font-size);
-        color: var(--color-ligth-gray);
+        color: var(--neg-background);
         font-weight: 300;
+        align-self: flex-start;
+        margin-left: 6%;
         /* background: red; */
     }
 
     .form_login>input{
-        width: 90%;
+        width: 460px;
         border-radius: 10px;
         height: 35px;
         border: none;
         padding-left: 15px;
         color: var(--color-ligth-gray);
-        font-size: var(--p-font-size);
+        font-size: calc(var(--p-font-size) - 2px);
         border-bottom: 1px solid var(--color-verde);
         margin-bottom: 10px;
         outline: none;
         transition: 0.07s;
     }
-        .form_login>input:focus{
-            border-bottom: 3px solid;
-        }
 
     .form_login>button{
-        width: 90%;
+        width: 460px;
         margin-top: 40px;
-        border-radius: var(--border-radious-btn);
+        border-radius:4px;
         border: none;
         height: var(--heigth-button-1);
         color: #fff;
-        background: var(--color-morado);
-        font-size: var(--p-font-size);
+        background: var(--color-morado-oscuro);
+        font-size: calc(var(--p-font-size) - 2px);
         cursor: pointer;
-        transition: 0.3s ease;
+        transition: 0.3s ease-in-out;
+        box-shadow: inset 0 0 0 0 var(--color-morado);
         
     }
         .form_login>button:hover{
-            background-color: var(--color-morado-oscuro);
-            transform: translateY(-3px);   
+            box-shadow: inset 460px 0 0 0 var(--color-morado);
         }
     
     .google_btn_container{
         background: #4285F4;
-        width: 90%;
+        width: 460px;
         display: flex;
         margin-top: 35px;
         border-top-right-radius: var(--border-radious-btn);
         border-bottom-right-radius: var(--border-radious-btn);
-        height: calc(var(--heigth-button-1) + 5px);
+        height: calc(var(--heigth-button-1) + 1px);
         font-size: var(--p-font-size);
         justify-content: center;
         align-items: center;
         border: 1px solid #4285F4;
         cursor: pointer;
         transition: 0.3s ease;
+        box-shadow: inset 0 0 0 0 var(--color-morado-oscuro);
     }
 
         .google_btn_container:hover{
-            background-color: #2b5cac;
-            transform: translateY(-3px);
+            box-shadow: inset 460px 0 0 0 var(--color-morado-oscuro);
         }
 
     .google_btn_container_logo{
@@ -179,7 +178,7 @@ html{
     }
 
     .google_btn_container>p{
-        font-size: var(--p-font-size);
+        font-size: calc(var(--p-font-size) - 2px);
         width: 80%;
         overflow: hidden;
         height: 100%;
@@ -192,7 +191,7 @@ html{
     .form_login>.link_router{
         color: var(--color-morado);
         margin-top: 20px;
-        font-size: var(--p-font-size);
+        font-size: calc(var(--p-font-size) - 4px); 
     }
 
 
@@ -208,11 +207,11 @@ html{
     line-height: 34px;
     white-space: nowrap;
     border-radius: 6px;
-    font-size: var(--p-font-size);
+    font-size: calc(var(--p-font-size) - 2px);
     color: #fff;
-    height: calc(var(--heigth-button-1) + 5px ) !important;
+    height: calc(var(--heigth-button-1) + 1px ) !important;
     } 
-
+/* 
 .form_login>.loginBtn::before{
     content: "";
     box-sizing: border-box;
@@ -221,7 +220,7 @@ html{
     left: 0;
     width: 34px;
     height: 100%;
-}
+} */
 
     .form_login>.loginBtn:focus {
         outline: none;
@@ -243,7 +242,7 @@ html{
     }
     .form_login>.loginBtn_facebook:hover,
     .form_login>.loginBtn_facebook:focus {
-        background-color: #5B7BD5;
+        background-color: #6f45bd;
         background-image: linear-gradient(#5B7BD5, #4864B1);
     }
 

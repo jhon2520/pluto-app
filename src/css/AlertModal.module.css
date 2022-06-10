@@ -1,7 +1,7 @@
 @import url("./Const.css");
 
 .modal {
-    background: var(--background);
+    background:#fff;
     border-radius: 5px;
     color: rgb(51, 51, 51);
     max-height: 620px;
@@ -33,7 +33,7 @@
     width: 100%;
     font-size: var(--p-font-size);
     text-align: center;
-    color: var(--color-font);
+    color: var(--color-verde-oscuro);
 }
 .span_enunciado{
     font-weight: 800;
@@ -60,15 +60,15 @@
 .cards_container{
     /* background-color: green; */
     width: 100%;
-    height: 80%;
+    height: 90%;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
     gap: 2%;
-    overflow-y: scroll;
+    overflow-y: auto;
     padding: 10px 0;
-    color: var(--neg-color-font);
+    color: #525E75
 }
 
 .alert_card{
@@ -83,14 +83,16 @@
     text-align: center;
     gap: 2%;
     border-radius: 6px;
-    border: 1px solid rgb(223, 240, 250);
-    -webkit-box-shadow: 5px 10px 16px 0px rgba(173, 171, 173, 0.426);
-    -moz-box-shadow: 5px 10px 16px 0px rgba(173, 171, 173, 0.441);
-    box-shadow: 5px 10px 16px 0px rgba(173, 171, 173, 0.341);
+    border: 1px solid rgb(222, 222, 222);
+    -webkit-box-shadow: 5px 10px 16px 0px rgba(215, 212, 215, 0.7);
+    -moz-box-shadow: 5px 10px 16px 0px rgba(173, 171, 173, 0.7);
+    box-shadow: 5px 10px 16px 0px rgba(173, 171, 173, 0.7);
     transition: 0.3s ease-in-out;
-    background: var(--neg-background);
+    background: #fff;
+    
     
 }
+
 .alert_card:hover{
     transform: translateY(-3px);
 }

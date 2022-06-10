@@ -23,7 +23,7 @@
 .tabla_container>.container_table{
     /* background: green; */
     width: 100%;
-    height: 60%;
+    height: 65%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -75,19 +75,22 @@ tbody>td{
 }
 
 tbody>tr>td>.btn_editar{
-    background: var(--color-verde);
+    background: var(--color-verde-neutro);
     color: white;
     padding: 5px var(--main-padding);
     border: none;
     font-size: calc(var(--p-font-size) - 3px );
     border-radius: 4px;
     transition: 0.3s ease-in-out;
+    width: 100px;
+    box-shadow: inset 0 0 0 0 var(--color-verde-oscuro);
     
 }
 
 tbody>tr>td>.btn_editar:hover{
-    background: var(--color-verde-oscuro);
-    transform: translateY(-3px);
+    /* background: var(--color-verde-oscuro);
+    transform: translateY(-3px); */
+    box-shadow: inset 100px 0 0 0 var(--color-verde-oscuro);
     
 }
 
@@ -99,11 +102,12 @@ tbody>tr>td>.btn_eliminar{
     font-size: calc(var(--p-font-size) - 3px );
     border-radius: 4px;
     transition: 0.3s ease-in-out;
-    
+    box-shadow: inset 0 0 0 0 var(--color-eliminar-oscuro);
+    width: 100px;
 }
 
 tbody>tr>td>.btn_eliminar:hover{
-    background: var(--color-eliminar-oscuro);
-    transform: translateY(-3px);
-    
+    /* background: var(--color-eliminar-oscuro);
+    transform: translateY(-3px); */
+    box-shadow: inset 100px 0 0 0 var(--color-eliminar-oscuro);
 }
