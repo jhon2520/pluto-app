@@ -1,5 +1,5 @@
 import React from 'react'
-import appImages from '../helpers/appImages'
+// import appImages from '../helpers/appImages'
 // import HomeContactForm from './HomeContactForm'
 import styles from "../css/HomeContact.module.css"
 import { IoLogoWhatsapp,IoMdGlobe } from "react-icons/io";

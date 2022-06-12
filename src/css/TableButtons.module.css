@@ -1,9 +1,12 @@
 @import url("Const.css");
 
 .btn_container{
-    /* background: red; */
+    background: red;
     margin-top: 40px;
     display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
     gap: 10px;
 }
 

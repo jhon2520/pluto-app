@@ -54,4 +54,4 @@ const HomeMainInfo = () => {
     )
 }
 
-export default React.memo(HomeMainInfo)
+export default HomeMainInfo

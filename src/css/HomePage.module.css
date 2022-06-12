@@ -3,26 +3,29 @@
 
 
 .main_container{
-    /* background: red; */
+    background: red;
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px;
-    height: 88vh;
+    flex-wrap: wrap-reverse;
+    gap: 10px;
+    min-height: 88vh;
 }
 .text_container{
     background: rgba(75, 21, 190, 0.057);
-    /* background: yellow; */
+    background: yellow;
     height: 60%;
     width: 40%;
     display: flex;
-    gap: 5%;
+    gap: 3%;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     padding: 0 var(--main-padding);
     border-radius: 20px;
+
+    min-height: 50vh;
+    min-width: 250px;
 }
 
     .text_container>h2{
@@ -47,15 +50,18 @@
 .img_container{
     height: 60%;
     width: 40%;
-    /* background: green; */
+    background: green;
     display: flex;
     justify-content: center;
     align-items: center;
+
+    min-width: 250px;
+    max-height: 300px;
 }
 
     .img_container>img{
-        width: auto;
-        height: 100%;
+        width: 100%;
+        height: 50%;
     }
 
 .img_up{

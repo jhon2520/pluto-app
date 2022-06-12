@@ -14,39 +14,46 @@ html{
 
 .page_container{
     height: 100vh;
+    width: 100vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 30px;
+    gap: 15px;
     font-family: var(--font-family);
+    
 }
 
     .page_container>h1{
         /* background-color: red; */
         font-size: var(--h1-font-size);
-        color: var(--color-verde);   
+        color: #006E8C;   
     }
 
 .main_container{
     /* background: red; */
-    width: 60%;
+    width: 60vw;
     height: 50%;
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
     -webkit-box-shadow: 10px 11px 31px -4px rgba(0,0,0,0.75);
     -moz-box-shadow: 10px 11px 31px -4px rgba(0,0,0,0.75);
     box-shadow: 10px 11px 31px -4px rgba(0,0,0,0.75);
     border-radius: 20px;
+    
 }
     .welcome_container{
-        background: var(--color-verde);
+        background: #006E8C;
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: space-between;
-        width: 50%;
-        gap: 15px;
+        justify-content: space-around;
+        width: 30vw;
+        height: 100%;
+        min-width: 300px;
+        gap: 18px;
         border-top-left-radius: 20px;
         border-bottom-left-radius: 20px;
         padding: var(--main-padding);
@@ -54,7 +61,7 @@ html{
     }
     .welcome_container>h2{
         font-size: var(--h2-font-size);
-        margin-top: 15%;
+        margin-top: 8%;
         color: #fff;
         text-align: center;
     }
@@ -62,7 +69,7 @@ html{
     .welcome_container>p{
         color: #fff;
         text-align: justify;
-        padding: 30px;
+        padding: 20px;
         font-size: var(--p-font-size);
     }
 
@@ -72,23 +79,26 @@ html{
     }
 
     .welcome_container>img{
-        width: 25%;
+        width: 15%;
         align-self: flex-start;
     }
 
 .login{
     width: 50%;
+    height: 100%;
 }
 
 .form_container{
     height: 100%;
-    width: 100%;
+    width: 30vw;
     display: flex;
     align-items: center;
     justify-content: center;
     border: 1px solid var(--color-verde);
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
+    min-width: 300px;
+    background: #fff;
 }
 
     .form_container>.form_login{
@@ -100,15 +110,13 @@ html{
         justify-content: center;
         align-items: center;
         padding: var(--main-padding);
-        padding-left: 30px;
-        gap: 1%;
         border-top-right-radius: 20px;
         border-bottom-right-radius: 20px;
     }
     
     .form_login>h3{
         font-size: var(--p-font-size);
-        color: var(--neg-background);
+        color: grey;
         font-weight: 300;
         align-self: flex-start;
         margin-left: 6%;
@@ -116,21 +124,23 @@ html{
     }
 
     .form_login>input{
-        width: 460px;
+        width: 90%;
         border-radius: 10px;
         height: 35px;
         border: none;
         padding-left: 15px;
-        color: var(--color-ligth-gray);
+        color: rgb(83, 83, 83);
         font-size: calc(var(--p-font-size) - 2px);
         border-bottom: 1px solid var(--color-verde);
         margin-bottom: 10px;
         outline: none;
         transition: 0.07s;
+        border-bottom: 1px solid gainsboro;
+        margin-bottom: 5%;
     }
 
     .form_login>button{
-        width: 460px;
+        width: 90%;
         margin-top: 40px;
         border-radius:4px;
         border: none;
@@ -139,17 +149,17 @@ html{
         background: var(--color-morado-oscuro);
         font-size: calc(var(--p-font-size) - 2px);
         cursor: pointer;
-        transition: 0.3s ease-in-out;
-        box-shadow: inset 0 0 0 0 var(--color-morado);
+        transition: 0.5s ease-in-out;
+        box-shadow: inset 0 0 0 0 #7960bd;
         
     }
         .form_login>button:hover{
-            box-shadow: inset 460px 0 0 0 var(--color-morado);
+            box-shadow: inset 30vw 0 0 0 #7960bd;
         }
     
     .google_btn_container{
         background: #4285F4;
-        width: 460px;
+        width: 90%;
         display: flex;
         margin-top: 35px;
         border-top-right-radius: var(--border-radious-btn);
@@ -160,12 +170,12 @@ html{
         align-items: center;
         border: 1px solid #4285F4;
         cursor: pointer;
-        transition: 0.3s ease;
+        transition: 0.5s ease;
         box-shadow: inset 0 0 0 0 var(--color-morado-oscuro);
     }
 
         .google_btn_container:hover{
-            box-shadow: inset 460px 0 0 0 var(--color-morado-oscuro);
+            box-shadow: inset 30vw 0 0 0 var(--color-morado-oscuro);
         }
 
     .google_btn_container_logo{
@@ -189,7 +199,7 @@ html{
     }
 
     .form_login>.link_router{
-        color: var(--color-morado);
+        color: #006E8C;
         margin-top: 20px;
         font-size: calc(var(--p-font-size) - 4px); 
     }
@@ -211,16 +221,6 @@ html{
     color: #fff;
     height: calc(var(--heigth-button-1) + 1px ) !important;
     } 
-/* 
-.form_login>.loginBtn::before{
-    content: "";
-    box-sizing: border-box;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 34px;
-    height: 100%;
-} */
 
     .form_login>.loginBtn:focus {
         outline: none;

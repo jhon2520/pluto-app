@@ -37,7 +37,7 @@ const ToDoPage = () => {
 
 
     return (
-        <div className={styles.page_todo}>
+        <div>
             <Navbar/>
             <MainSavingSpend
                 img={appImages("./main4-img.png")}

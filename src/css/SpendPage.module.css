@@ -1,10 +1,11 @@
 @import url("Const.css");
 
 .main_info_container{
-    /* background: red; */
+    background: red;
     height: 88vh;
     padding: 40px;
     display: flex;
+    flex-wrap: wrap;
     
 }
 
@@ -12,19 +13,26 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 3%;
+    flex-wrap: wrap;
+    gap: 1%;
     background: rgba(75, 21, 190, 0.057);
+    width: 100%;
+    background: purple;
 }
 
 
 .section>img{
     width: 50%;
-    /* background: yellow; */
+    height: auto;
+    background: yellow;
+    min-width: 230px;
+    /* min-height: 250px; */
+    
 }
 
 .grupoh{
-    /* background-color: green; */
-    height: 50%;
+    background-color: green;
+    height: 60%;
     width: 30%;
     display: flex;
     flex-direction: column;
@@ -32,6 +40,7 @@
     align-items: center;
     gap: 10px;
     padding: 20px;
+    min-width: 230px;
 }
 
     .grupoh>h2{

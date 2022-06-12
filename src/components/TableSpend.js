@@ -19,7 +19,7 @@ const TableSpend = () => {
     const state = useSelector(state=>state)
     const {spends} = state.spend
     const [paginated,pages,pagination,currentPage] = useTable(spends)
-    const [isLoading, setIsLoading] = useState(true)
+    // const [isLoading, setIsLoading] = useState(true)
 
     const handleNewSpend = () =>{
         navigate("/spend/new")

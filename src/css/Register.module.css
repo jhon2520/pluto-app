@@ -1,30 +1,33 @@
 @import url("Const.css");
 
 .page_container{
-    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 30px;
     font-family: var(--font-family);
+    height: 100vh;
+    width: 100vw;
     
 }
 
     .page_container>h1{
         /* background-color: red; */
         font-size: var(--h1-font-size);
-        color: var(--color-morado);
+        color: #46279b;
         
     }
 
 
 .main_container{
     /* background: red; */
-    width: 60%;
-    height: 60%;
+    width: 60vw;
+    height: 50%;
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
     -webkit-box-shadow: 10px 11px 31px -4px rgba(0,0,0,0.75);
     -moz-box-shadow: 10px 11px 31px -4px rgba(0,0,0,0.75);
     box-shadow: 10px 11px 31px -4px rgba(0,0,0,0.75);
@@ -32,22 +35,24 @@
 
 }
     .welcome_container{
-        background: var(--color-morado);
+        background:#46279b;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: space-between;
-        width: 50%;
-        gap: 15px;
+        gap: 8px;
         border-top-left-radius: 20px;
         border-bottom-left-radius: 20px;
         padding: 20px;
         overflow: hidden;
+        width: 30vw;
+        height: 100%;
+        min-width: 300px;
 
     }
     .welcome_container>h2{
         font-size: var(--h2-font-size);
-        margin-top: 15%;
+        margin-top: 5%;
         color: #fff;
         text-align: center;
     }
@@ -61,23 +66,27 @@
     }
 
     .welcome_container>img{
-        width: 25%;
+        width: 15%;
         align-self: flex-start;
     }
 
 .register{
     width: 50%;
+    height: 100%;
 }
 
 .form_container{
-    height: 100%;
-    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
     border: 1px solid var(--color-verde);
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
+    width: 30vw;
+    height: 100%;
+    min-width: 300px;
+    padding: 20px;
 }
 
     .form_container>.form_register{
@@ -87,19 +96,20 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        align-items: flex-start;
-        padding: 20px;
-        padding-left: 30px;
-        gap: 2%;
+        align-items: center;
+        /* padding: 20px; */
+        gap: 1px;
         border-top-right-radius: 20px;
         border-bottom-right-radius: 20px;
     
     }
     
     .form_register>h3{
-        font-size: var(--h3-font-size);
-        color: var(--color-ligth-gray);
+        font-size: var(--p-font-size);
+        color: gray;
         font-weight: 300;
+        width: 100%;
+        padding: 0 20px;
         /* background: red; */
     }
 
@@ -109,16 +119,14 @@
         height: 35px;
         border: none;
         padding-left: 15px;
-        color: var(--color-ligth-gray);
-        font-size: var(--h3-font-size);
+        color: rgb(83, 83, 83);
+        font-size: calc(var(--p-font-size) - 2px);
         border-bottom: 1px solid var(--color-verde);
         margin-bottom: 20px;
         outline: none;
         transition: 0.07s ease;
+        border-bottom: 1px solid gainsboro;
     }
-        .form_register>input:focus{
-            border-bottom: 3px solid;
-        }
 
     .form_register>button{
         width: 90%;
@@ -127,22 +135,21 @@
         border: none;
         height: var(--heigth-button-1);
         color: #fff;
-        background: var(--color-morado);
-        font-size: var(--h3-font-size);
+        background:#46279b;
+        font-size: calc(var(--p-font-size) - 2px);
         cursor: pointer;
-        transition: 0.3s ease;
+        transition: 0.5s ease;
+        box-shadow: inset 0 0 0 0#7960bd;
         
     }
         .form_register>button:hover{
-            background-color: var(--color-morado-oscuro);
-            transform: translateY(-3px);
-            
+            box-shadow: inset 30vw 0 0 0 #7960bd;
         }
     
     .form_register>.link{
         margin-top: 20px;
-        font-size: var(--p-font-size);
-        color: var(--color-morado);
+        font-size: calc(var(--p-font-size) - 4px); 
+        color: #7960bd;
     }
 
 
