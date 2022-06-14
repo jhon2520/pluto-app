@@ -1,6 +1,7 @@
 import { collection, getDocs, getFirestore, query } from "firebase/firestore"
 import { parseInt } from "lodash"
 import firebaseApp from "../firebase/firebaseConfig"
+import { getMostMonth, groupByMonth } from "../helpers/groupByMonth"
 import TYPES from "../types/types"
 
 
@@ -23,8 +24,21 @@ const setMostValueSave = (value)=>{
     }
 }
 
+const setSavingPerMonth = (values)=>{
+    return{
+        type:TYPES.DATASAVINGPERMONTH,
+        payload:values
+    }
+}
 
-//TODO: REvisar si esto lo hago mejor con los savings guardados ya en el state en vez de llamar la base
+const setMosthMonthSaved = (obj)=>{
+    return{
+        type:TYPES.DATAMONTHMOSTSAVING,
+        payload:obj
+    }
+}
+
+
 export const startSettingTotalSave = ()=>{
 
     return async(dispatch,getState)=>{
@@ -40,16 +54,21 @@ export const startSettingTotalSave = ()=>{
         //obtener la referencia de todos los savinds
         const queryDoc = query(collection(firestore,`${uid}/app/savings/`))
         const querySnap = await getDocs(queryDoc);
+
         querySnap.forEach((snap)=>{
             totalSavings += parseInt(snap.data().value) 
             values.push(snap.data().value)
             snaps.push(snap.data())
         })
         
-        //console.log(snaps)
+        // console.log(snaps)
 
         const maxSaving = Math.max(...values)
+        const valuesPerMonth = groupByMonth(snaps)
+        const mostMonthSaved = getMostMonth(valuesPerMonth);
 
+        dispatch(setMosthMonthSaved(mostMonthSaved));
+        dispatch(setSavingPerMonth(valuesPerMonth));
         dispatch(setMostValueSave(maxSaving))
         dispatch(setTotalSave(totalSavings))
     }
@@ -73,6 +92,21 @@ const setMostSpent = (value)=>{
     }
 }
 
+const setSpendPerMonth = (values)=>{
+    return{
+        type:TYPES.DATASPENDTPERMONTH,
+        payload:values
+    }
+}
+
+const setMosthMonthSpent = (obj)=>{
+    return{
+        type:TYPES.DATAMONTHMOSTSPENT,
+        payload:obj
+    }
+}
+
+
 export const startSettingDataSpent = ()=>{
 
     return async(dispatch,getState)=>{
@@ -82,6 +116,7 @@ export const startSettingDataSpent = ()=>{
         const {uid} = state.auth;
         let totalSpent = 0
         let values = []
+        let snaps = []
 
         const queryDoc = query(collection(firestore,`${uid}/app/spends/`))
         const querySnap = await getDocs(queryDoc);
@@ -89,9 +124,15 @@ export const startSettingDataSpent = ()=>{
         querySnap.forEach((snap)=>{
             totalSpent += parseInt(snap.data().value)
             values.push(snap.data().value)
+            snaps.push(snap.data())
         })
 
         const maxSpent = Math.max(...values)
+        const valuesPerMonth = groupByMonth(snaps)
+        const mostMonthSpent = getMostMonth(valuesPerMonth);
+
+        dispatch(setMosthMonthSpent(mostMonthSpent));
+        dispatch(setSpendPerMonth(valuesPerMonth));
         dispatch(setMostSpent(maxSpent))
         dispatch(setTotalSpent(totalSpent))
 

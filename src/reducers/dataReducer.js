@@ -32,16 +32,14 @@ const initState =  {
     saving:{
         totalSaved: 0,
         mostValueSaved:0,
-        greatestMothValue:0,
-        lowerMonthValue:0,
-        savingPerMoth:{}
+        savingPerMoth:[],
+        monthMostSaved:null
     },
     spending:{
         totalSpent: 0,
         mostValueSpent:0,
-        greatestMothValue:0,
-        lowerMonthValue:0,
-        spentPerMoth:{}
+        spentPerMoth:[],
+        monthMostSpendt:null
     },
     taks:{
         undoneTaks:0,
@@ -65,6 +63,16 @@ const dataReducer = (state = initState,action)=>{
                 ...state,
                 saving:{...state.saving,mostValueSaved:action.payload}
             }
+        case TYPES.DATASAVINGPERMONTH:
+            return{
+                ...state,
+                saving:{...state.saving,savingPerMoth:action.payload}
+            }
+        case TYPES.DATAMONTHMOSTSAVING:
+            return{
+                ...state,
+                saving:{...state.saving,monthMostSaved:action.payload}
+            }
         //spendings
         case TYPES.DATATOTALSPENT:
             return{
@@ -76,6 +84,17 @@ const dataReducer = (state = initState,action)=>{
                 ...state,
                 spending:{...state.spending,mostValueSpent:action.payload}
             }
+        case TYPES.DATASPENDTPERMONTH:
+            return{
+                ...state,
+                spending:{...state.spending,spentPerMoth:action.payload}
+            }
+        case TYPES.DATAMONTHMOSTSPENT:
+            return{
+                ...state,
+                spending:{...state.spending,monthMostSpendt:action.payload}
+            }
+            
         //Tasks
         case TYPES.DATAUNDONETAKS:
             return{

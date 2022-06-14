@@ -19,7 +19,6 @@ import { TiInputChecked,TiDelete } from "react-icons/ti";
 
 const ToDoItemsList = () => {
     
-    console.log("tabla reenderizada");
     
     const navigate = useNavigate();
     const dispatch = useDispatch();
