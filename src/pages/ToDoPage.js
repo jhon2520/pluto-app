@@ -1,16 +1,3 @@
-/*
-
-{
-    id:"asdsaasdas",
-    title:"adasd",
-    description:"asdasdasd"
-    creation_todo: "01/01/1900",
-    limit_todo:    "01/03/1900",
-    create_alert:false,
-    complete:false,
-}
-*/
-
 import React,{useEffect} from 'react'
 import Navbar from '../components/Navbar'
 import styles from "../css/TodoPage.module.css"
@@ -22,6 +9,9 @@ import { startLoadingTodos } from '../actions/todo.action'
 import { startSettingUndoneTaks } from '../actions/data.action'
 
 
+let valor = 0;
+
+
 const ToDoPage = () => {
 
     const titulo = "MANTÉN TUS TAREAS PENDIENTES SIEMPRE PRESENTE"
@@ -30,6 +20,11 @@ const ToDoPage = () => {
 
     useEffect(() => {
         
+        if(valor === 0){
+            valor++
+            return
+        }
+
         dispath(startLoadingTodos())
         dispath(startSettingUndoneTaks())
 

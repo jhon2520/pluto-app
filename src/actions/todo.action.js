@@ -176,3 +176,9 @@ export const startUpdatingTodo = ()=>{
     }
 
 }
+
+export const todoCleningLogout = ()=>{
+    return{
+        type:TYPES.TODOLOGOUT
+    }
+}

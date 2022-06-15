@@ -67,6 +67,12 @@ const todoReducer = (state = initState, action)=>{
                 )
                 
             }
+        case TYPES.TODOLOGOUT:
+            return{
+                ...state,
+                todos:[],
+                active:null
+            }
         
         default:
             return state;

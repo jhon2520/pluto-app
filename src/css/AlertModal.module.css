@@ -48,6 +48,7 @@
     padding: 5px 10px;
     border-radius: var(--border-radious-btn);
     transition: 0.3s ease-in-out;
+    font-size: 0.9rem;
 }
 
     .btn_pendientes:hover{
@@ -64,6 +65,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
     flex-wrap: wrap;
     gap: 2%;
     overflow-y: auto;
@@ -89,6 +91,7 @@
     box-shadow: 5px 10px 16px 0px rgba(173, 171, 173, 0.7);
     transition: 0.3s ease-in-out;
     background: #fff;
+    min-width: 180px;
     
     
 }

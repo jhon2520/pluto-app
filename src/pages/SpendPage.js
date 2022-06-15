@@ -1,4 +1,4 @@
-import React,{useEffect} from 'react'
+import React,{useEffect,useRef} from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { startSettingDataSpent } from '../actions/data.action'
 import { startLoadingSpends } from '../actions/spend.action'
@@ -7,6 +7,7 @@ import MainSavingSpend from '../components/SpendMain'
 import TableSpend from '../components/TableSpend'
 import appImages from '../helpers/appImages'
 
+let valor = 0;
 
 const SpendPage = () => {
     
@@ -19,9 +20,17 @@ const SpendPage = () => {
 
 
 
+
     useEffect(()=>{
+
+        if(valor === 0 ){
+            valor++
+            return
+        }
+        
         dispatch(startLoadingSpends(uid))
         dispatch(startSettingDataSpent())
+
     },[dispatch,uid])
 
     return (

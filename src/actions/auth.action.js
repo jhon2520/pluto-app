@@ -5,6 +5,11 @@ import successMessage from "../helpers/successMessage"
 
 
 import TYPES from "../types/types"
+import { dataCleaningLogout } from "./data.action"
+import { savingCleaningLogout } from "./savings.actions"
+import { spendCleaningLogout } from "./spend.action"
+import { todoCleningLogout } from "./todo.action"
+import { uiCleaningLogout } from "./ui.action"
 
 export const login = (uid,displayName) =>{
     return{
@@ -86,6 +91,11 @@ export const startLogout = ()=>{
 
         const auth = getAuth(firebaseApp);
         await signOut(auth);
+        dispath(spendCleaningLogout())
+        dispath(savingCleaningLogout())
+        dispath(todoCleningLogout())
+        dispath(dataCleaningLogout())
+        dispath(uiCleaningLogout())
         dispath(logout())
     }
 

@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState,useEffect} from 'react'
 import CardDashBoard from '../components/CardDashBoard'
 import Navbar from '../components/Navbar'
 import {useSelector} from "react-redux"
@@ -6,14 +6,23 @@ import styles from "../css/DashBoard.module.css"
 import PieChart from '../components/PieChart'
 import PlotChart from '../components/PlotChart'
 import TaskDashBoard from '../components/TaskDashBoard'
-
-
-const labels = ["Ahorros","Gastos"];
+import { setMonthLineChart } from '../helpers/setMonthLineChart'
+import convertNumberToMonth from '../helpers/convertNumberToMonth'
 
 
 const DashBoardPage = () => {
     
     const {saving,spending,taks} = useSelector((state)=> state.data)
+
+    const {savingPerMoth} = saving;
+    const {spentPerMoth} = spending;
+
+
+    const [labels, setLabels] = useState([])
+    const [dataAhorro, setDataAhorro] = useState([])
+    const [dataGasto, setDataGasto] = useState([])
+
+
 
 
     const data = [{
@@ -31,7 +40,7 @@ const DashBoardPage = () => {
         {
             id:3,
             title: "Mes de mayor ahorro",
-            value: "Mes: " + saving.monthMostSaved.month + " Valor: $ " + saving.monthMostSaved.value.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'),
+            value: "Mes: " + convertNumberToMonth(saving.monthMostSaved.month) + " Valor: $ " + saving.monthMostSaved.value.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'),
             description:"Mes en el que se presenta el mayor ahorro"
         },
         {
@@ -43,19 +52,32 @@ const DashBoardPage = () => {
         {
             id:5,
             title: "Mayor gasto en una operación",
-            value: "$ " +spending.mostValueSpent.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'),
+            value: "$ " + spending.mostValueSpent.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'),
             description:"Representa el mayor monto gastado hasta el momento"
         },
         {
             id:6,
             title: "Mes de mayor gasto",
-            value:  "Mes: " + spending.monthMostSpendt.month + " Valor: $ " + spending.monthMostSpendt.value.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'),
+            value:  "Mes: " + convertNumberToMonth(spending.monthMostSpendt.month) + " Valor: $ " + spending.monthMostSpendt.value.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'),
             description:"Mes en el que se presenta el mayor gasto"
         },
 
     ]
 
     const dataPie = [saving.totalSaved,spending.totalSpent]
+
+
+    useEffect(()=>{
+
+        const {labels,ahorroData,gastoData} =  setMonthLineChart([...savingPerMoth],[...spentPerMoth])
+
+        setLabels(labels);
+        setDataAhorro(ahorroData);
+        setDataGasto(gastoData);
+
+    
+    },[savingPerMoth,spentPerMoth])
+
 
 
     return (
@@ -79,10 +101,14 @@ const DashBoardPage = () => {
             </div>
             <section className={styles.charts_container}>
                 <PieChart
-                    labels={labels}
+                    labels={["Ahorros","Gastos"]}
                     dataPie={dataPie}
                 />
-                <PlotChart/>
+                <PlotChart
+                    labels={labels}
+                    dataAhorro={dataAhorro}
+                    dataGasto={dataGasto}
+                />
             </section>
             <TaskDashBoard
                 doneTaks={taks.doneTaks}

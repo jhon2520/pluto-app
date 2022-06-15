@@ -7,7 +7,7 @@ import { useNavigate,useParams } from 'react-router-dom'
 import successMessage from '../helpers/successMessage'
 import formNewSavingValidation from '../helpers/validateNewSaving'
 import errorMessage from '../helpers/errorMessage'
-import { startSettingTotalSave } from '../actions/data.action'
+import { startSettingDataSave } from '../actions/data.action'
 
 const NewSavingForm = () => {
 
@@ -59,7 +59,7 @@ const NewSavingForm = () => {
         if(formNewSavingValidation(formValues)){
 
             dispatch(startAddingNewSaving(date,value,description));
-            dispatch(startSettingTotalSave())
+            dispatch(startSettingDataSave())
             successMessage("Creado","Ahorro registrado correctamente")
             navigate(-1)
         }   
@@ -68,7 +68,7 @@ const NewSavingForm = () => {
     const handleEdit = () =>{
         dispatch(setActiveSaving({id:savingId,...formValues}))
         dispatch(startEditingSaving())
-        dispatch(startSettingTotalSave())
+        dispatch(startSettingDataSave())
         .then(successMessage(`Editar`,"Ahorro editado correctamente"))
         .catch((err)=>errorMessage("Error",err.message))
         navigate(-1)

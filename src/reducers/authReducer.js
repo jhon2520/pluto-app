@@ -1,14 +1,15 @@
-/**
-{
-    uid:"1234564",
-    displayName: "Jhon Romero"
-}
-
- */
-
 import TYPES from "../types/types";
 
-const authReducer = (state = {},action)=>{
+const initState = {
+    uid:"",
+    name: "",
+
+}
+
+
+
+
+const authReducer = (state = initState,action)=>{
 
     switch (action.type) {
         case TYPES.AUTHLOGIN:

@@ -5,6 +5,7 @@ import {useDispatch} from "react-redux"
 import { startLogignWithGoogle, startLoginWithEmailPassword } from '../actions/auth.action'
 import useForm from '../hooks/useForm'
 
+
 const LoginForm = () => {
 
     const dispath = useDispatch();
@@ -17,6 +18,7 @@ const LoginForm = () => {
 
     const handleLoginWithGoogle = () =>{
         dispath(startLogignWithGoogle())
+        
     }
 
     const handleLoginWithEmailPassword = () =>{

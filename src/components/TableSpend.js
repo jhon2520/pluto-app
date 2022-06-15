@@ -70,18 +70,18 @@ const TableSpend = () => {
                             <th>Eliminar gasto</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody  className={tables.tabla_body}>
                         {
                             paginated?.map((spend,i)=>{
                                 return(
 
                                 <tr key={i} className={tables.table_row}>
                                     {/* <td>{spend.id}</td> */}
-                                    <td>{spend.date}</td>
-                                    <td>{spend.value}</td>
-                                    <td>{spend.description}</td>
-                                    <td><button onClick={()=>handleEdit(spend.id)} className={tables.btn_editar}>Editar</button></td>
-                                    <td><button onClick={()=>handleDelete(spend.id)} className={tables.btn_eliminar}>Eliminar</button></td>
+                                    <td data-label="Fecha gasto" >{spend.date}</td>
+                                    <td data-label="Valor gasto">{spend.value}</td>
+                                    <td data-label="Descripción gasto">{spend.description}</td>
+                                    <td data-label="Editar gasto"><button onClick={()=>handleEdit(spend.id)} className={tables.btn_editar}>Editar</button></td>
+                                    <td data-label="Eliminar gasto"><button onClick={()=>handleDelete(spend.id)} className={tables.btn_eliminar}>Eliminar</button></td>
                                 </tr>
                                 );
                             })

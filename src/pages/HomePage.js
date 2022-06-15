@@ -1,25 +1,29 @@
 import React,{useEffect} from 'react'
 import { useSelector,useDispatch } from 'react-redux'
-
 import Navbar from '../components/Navbar'
 import HomeMainInfo from '../components/HomeMainInfo'
 import HomeSkills from '../components/HomeSkills'
 import HomeContact from '../components/HomeContact'
 import AlertTodoModal from '../components/AlertTodoModal'
-import { startSettingUndoneTaks } from '../actions/data.action'
-import { setDarkTheme, SetModalAlertOpend, setModalAlreadyOpen } from '../actions/ui.action'
+import { startSettingDataSpent, startSettingDataSave, startSettingUndoneTaks } from '../actions/data.action'
+import { setDarkTheme, SetModalAlertOpend, setModalAlreadyOpen, uiSetAppFirstTimeOpen } from '../actions/ui.action'
 import validateDateToAlert from '../helpers/validateDateToAlert'
-
-
+import { startLoadingSpends } from '../actions/spend.action'
+import { startLoadingSavings } from '../actions/savings.actions'
+import { startLoadingTodos } from '../actions/todo.action'
 
 
 
 const HomePage = () => {
     
     const dispatch = useDispatch();
-    const {modalAlreadyOpen} = useSelector((state)=>state.ui)
+    const {modalAlreadyOpen,appFirstOpen} = useSelector((state)=>state.ui)
     const {taks} = useSelector((state)=> state.data)
     const {taskWithAlerts} = taks
+    const state = useSelector(state=>state)
+    const {uid} = state.auth
+
+
     let taskToShow = []
 
     taskWithAlerts.forEach((task)=> {
@@ -30,43 +34,46 @@ const HomePage = () => {
     const cantidadAlertas = taskToShow.length;
 
     useEffect(() => {
+
         
-        //TODO: Colocar que se carguen todos los gastos, ahorros y tareas con sus dispatch
-        dispatch(startSettingUndoneTaks());
-        
-        // (cantidadAlertas > 0) && dispatch(SetModalAlertOpend())
-        
+        //se cargan todos los gastos, ahorros y tareas con sus dispatch
+            if(appFirstOpen === 0){
+                dispatch(startSettingUndoneTaks());
+                dispatch(startLoadingSpends(uid))
+                dispatch(startSettingDataSpent())
+                dispatch(startLoadingSavings(uid));
+                dispatch(startSettingDataSave())
+                dispatch(startLoadingTodos())
+                dispatch(startSettingUndoneTaks())
+            }
+            dispatch(uiSetAppFirstTimeOpen())
+
         if(cantidadAlertas>0 && !modalAlreadyOpen){
             dispatch(setModalAlreadyOpen())
             dispatch(SetModalAlertOpend())
         }
 
-    }, [dispatch,cantidadAlertas,modalAlreadyOpen]);
+
+    }, [dispatch,cantidadAlertas,modalAlreadyOpen,uid]);
 
     useEffect(() => {
         if(localStorage.getItem("theme")){
         
             const theme = localStorage.getItem("theme");
             (theme === "dark") && dispatch(setDarkTheme())
-            
         }
     }, [dispatch]);
 
 
     return (
         <div>
-            {/* navbar */}
             <Navbar/>
-            {/* Modal de alertas */}
             <AlertTodoModal/>
-            {/* main info */}
             <HomeMainInfo/>
-            {/* funcionalidades */}
             <HomeSkills/>
-            {/* contacto */}
             <HomeContact/>
         </div>
     )
 }
 
-export default React.memo(HomePage)
+export default HomePage

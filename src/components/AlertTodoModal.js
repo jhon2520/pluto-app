@@ -5,7 +5,6 @@ import { SetModalAlertClosed } from '../actions/ui.action';
 import styles from "../css/AlertModal.module.css"
 import TodoCardAlert from './TodoCardAlert';
 import { useNavigate } from 'react-router-dom';
-import moment from 'moment';
 import validateDateToAlert from '../helpers/validateDateToAlert';
 
 
@@ -15,8 +14,6 @@ const customStyles = {
     left: '50%',
     right: 'auto',
     bottom: 'auto',
-    // marginRight: '-50%',
-    //transform: 'translate(-50%, -50%)',
     },
 };
 

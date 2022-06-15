@@ -1,7 +1,7 @@
 @import url("Const.css");
 
 .main_container{
-    height: 100vh;
+    min-height: 100vh;
     padding:var(--main-padding);
     width: 100%;
     display: flex;
@@ -20,7 +20,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 108vh;
+    min-height: 108vh;
 }
 
 
@@ -34,7 +34,7 @@
         
     }
     
-    .table_container>table{
+    .table_container>.table{
         width: 100%;
         text-align: center;
         border-collapse: collapse;
@@ -130,9 +130,9 @@
 
         
 
-        .body_row>th,.body_row>td:first-child{
-            font-weight: 800;
-        }
+    .body_row>th,.body_row>td:first-child{
+        font-weight: 800;
+    }
 
     .body_row>td>button{
         background: none;
@@ -249,4 +249,70 @@
     border-radius: 15px;
 
 
+}
+
+
+@media(max-width:500px){
+
+    .table{
+        /* background: red; */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+        width: 100vw;
+    }
+
+
+    .tr,.tr>th,.body_row,.body_row_complete{
+        /* width: 60px; */
+        /* height: 90px; */
+        max-width: 80vw;
+        min-width: 80vw;
+        max-height: 20vh;
+        min-height: 430px;
+        border: 1px solid #fff;
+
+    }
+
+    .table>thead{
+        display: none;
+    }
+    .table,.table>tbody,.table>tr,.table>td{
+        display: block;
+        width: 50%;
+
+    }
+    tbody{
+        width: 100vw;
+        /* background: green; */
+    }
+    .table_container>.table>.tr{
+        margin-bottom: 15px;
+    }
+    .body_row,.body_row_complete,.body_row>td,.body_row_complete>td{
+        text-align: right;
+        position: relative;
+    }
+    .body_row::before,.body_row_complete::before{
+        content: attr(data-label);
+        position: absolute;
+        left: 0;
+        width: 50%;
+    }
+
+    .body_row{
+        max-height: 150px;
+        height: 150px;
+        max-width: 60px;
+    }
+    .description{
+        display: inline-block;
+        text-align: right;
+        width: 120px;
+        text-align: center;
+        background: red;
+        max-width: 100px;
+        
+    }
 }

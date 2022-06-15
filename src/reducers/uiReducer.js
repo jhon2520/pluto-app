@@ -4,6 +4,8 @@ const initState = {
     alertTodoOpen : false,
     modalAlreadyOpen : false,
     isDarkMode:false,
+    appFirstOpen:0
+    
 }
 
 const uiReducer =(state = initState,action)=>{
@@ -30,18 +32,31 @@ const uiReducer =(state = initState,action)=>{
             }
 
         case TYPES.UISETDARKMODE:
-            // console.log("llego al dispatch dark");
             return{
                 ...state,
                 isDarkMode:true
             }
         case TYPES.UISETLIGHTMODE:
-            // console.log("llego al dispatch ligyh");
             return{
                 ...state,
                 isDarkMode:false
             }
-            
+        case TYPES.UIAPPFIRSTIMEOPEN: 
+            return{
+                ...state,
+                appFirstOpen:state.appFirstOpen + 1
+            }
+        
+        case TYPES.UILOGOUT: 
+            return{
+                ...state,
+                alertTodoOpen : false,
+                modalAlreadyOpen : false,
+                isDarkMode:false,
+                appFirstOpen:0
+            }
+
+
         default:
             return state;
     }

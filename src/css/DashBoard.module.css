@@ -64,8 +64,8 @@
     .pie_chart{
         background: purple;
         height: 380px;
-        width: 30%;
-        min-width: 290px;
+        width: 25%;
+        min-width: 250px;
         /* margin: 10px 0; */
     }
     .plot_chart{
@@ -113,9 +113,23 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 20px;
 }
 
 .pie_chart{
     width: 30%;
     background: green;
+}
+
+
+.line_container{
+    background: turquoise;
+    height: 380px;
+}
+
+.line_chart{
+    background: red;
+    height: 380px;
+    max-height: 380px;
+    min-height: 380px;
 }

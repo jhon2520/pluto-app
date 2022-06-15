@@ -39,7 +39,7 @@ const setMosthMonthSaved = (obj)=>{
 }
 
 
-export const startSettingTotalSave = ()=>{
+export const startSettingDataSave = ()=>{
 
     return async(dispatch,getState)=>{
 
@@ -200,7 +200,11 @@ export const startSettingUndoneTaks = ()=>{
 
 
 
-
+export const dataCleaningLogout = ()=>{
+    return{
+        type:TYPES.DATALOGOUT
+    }
+}
 
 
 

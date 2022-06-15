@@ -111,6 +111,27 @@ const dataReducer = (state = initState,action)=>{
                 ...state,
                 taks:{...state.taks,taskWithAlerts:action.payload}
             }
+        case TYPES.DATALOGOUT:
+            return{
+                ...state,
+                saving:{
+                    totalSaved: 0,
+                    mostValueSaved:0,
+                    savingPerMoth:[],
+                    monthMostSaved:null
+                },
+                spending:{
+                    totalSpent: 0,
+                    mostValueSpent:0,
+                    spentPerMoth:[],
+                    monthMostSpendt:null
+                },
+                taks:{
+                    undoneTaks:0,
+                    doneTaks:0,
+                    taskWithAlerts:[]
+                }
+            }
         
     
         default:

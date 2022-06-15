@@ -29,3 +29,15 @@ export const setLightTheme = ()=>{
         type:TYPES.UISETLIGHTMODE
     }
 }
+
+export const uiCleaningLogout = ()=>{
+    return{
+        type:TYPES.UILOGOUT
+    }
+}
+
+export const uiSetAppFirstTimeOpen = ()=>{
+    return{
+        type:TYPES.UIAPPFIRSTIMEOPEN
+    }
+}

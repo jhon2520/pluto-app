@@ -1,11 +1,14 @@
-import React,{useEffect} from 'react'
+import React,{useEffect,useRef} from 'react'
 import { startLoadingSavings } from '../actions/savings.actions'
 import Navbar from '../components/Navbar'
 import MainSavingSpend from '../components/SpendMain'
 import TableSavings from '../components/TableSavings'
 import { useDispatch,useSelector } from 'react-redux'
 import appImages from '../helpers/appImages'
-import { startSettingTotalSave } from '../actions/data.action'
+import { startSettingDataSave  } from '../actions/data.action'
+
+
+let valor = 0;
 
 const SavingPage = () => {
 
@@ -14,12 +17,19 @@ const SavingPage = () => {
 
     const dispatch = useDispatch();
     const state = useSelector(state=>state)
-
     const {uid} = state.auth
 
+
     useEffect(() => {
+
+        if(valor === 0){
+            valor++
+            return
+        }
+
         dispatch(startLoadingSavings(uid));
-        dispatch(startSettingTotalSave())
+        dispatch(startSettingDataSave())
+
     }, [dispatch,uid]);
 
     return (

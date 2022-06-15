@@ -9,7 +9,7 @@ import { useDispatch,useSelector } from 'react-redux'
 import questionMessage from '../helpers/questionMessage'
 import successMessage from '../helpers/successMessage'
 import { startDeletingSaving } from '../actions/savings.actions'
-import { setTotalSave, startSettingMostValueSaved, startSettingTotalSave } from '../actions/data.action'
+import { setTotalSave, startSettingMostValueSaved, startSettingDataSave } from '../actions/data.action'
 
 
 
@@ -34,7 +34,7 @@ const TableSavings = () => {
         questionMessage().then((result)=>{
             if(result.isConfirmed){
                 successMessage("Eliminado","registo eliminado con éxito")
-                dispatch(startSettingTotalSave())
+                dispatch(startSettingDataSave())
                 dispatch(startDeletingSaving(id))
             }
         })
@@ -70,11 +70,11 @@ const TableSavings = () => {
 
                                 <tr key={i} className={tables.table_row}>
                                     {/* <td>{spend.id}</td> */}
-                                    <td>{saving.date}</td>
-                                    <td>{saving.value}</td>
-                                    <td>{saving.description}</td>
-                                    <td><button onClick={()=>handleEdit(saving.id)} className={tables.btn_editar}>Editar</button></td>
-                                    <td><button onClick={()=>handleDelete(saving.id,saving.value)} className={tables.btn_eliminar}>Eliminar</button></td>
+                                    <td data-label="Fecha gasto">{saving.date}</td>
+                                    <td data-label="Valor gasto">{saving.value}</td>
+                                    <td data-label="Descripción gasto">{saving.description}</td>
+                                    <td data-label="Editar gasto"><button onClick={()=>handleEdit(saving.id)} className={tables.btn_editar}>Editar</button></td>
+                                    <td data-label="Eliminar gasto"><button onClick={()=>handleDelete(saving.id,saving.value)} className={tables.btn_eliminar}>Eliminar</button></td>
                                 </tr>
                                 );
                             })
