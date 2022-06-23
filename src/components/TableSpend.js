@@ -1,4 +1,4 @@
-import React,{useEffect,useState} from 'react'
+import React from 'react'
 import tables from "../css/Tables.module.css"
 import useTable from '../hooks/useTable'
 import NavPagination from './NavPagination'

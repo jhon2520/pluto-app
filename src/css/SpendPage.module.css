@@ -1,7 +1,7 @@
 @import url("Const.css");
 
 .main_info_container{
-    background: red;
+    /* background: red; */
     height: 88vh;
     padding: 40px;
     display: flex;
@@ -17,21 +17,21 @@
     gap: 1%;
     background: rgba(75, 21, 190, 0.057);
     width: 100%;
-    background: purple;
+    /* background: purple; */
 }
 
 
 .section>img{
     width: 50%;
     height: auto;
-    background: yellow;
+    /* background: yellow; */
     min-width: 230px;
     /* min-height: 250px; */
     
 }
 
 .grupoh{
-    background-color: green;
+    /* background-color: green; */
     height: 60%;
     width: 30%;
     display: flex;
@@ -59,4 +59,9 @@
     margin-top: 20px;
     border: var(--horizontal);
     
+}
+
+@media(max-width:500px){
+
+
 }

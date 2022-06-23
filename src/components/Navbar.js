@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState} from 'react'
 import { NavLink,useNavigate } from 'react-router-dom'
 import appImages from '../helpers/appImages'
 import styles from "../css/Navbar.module.css"
@@ -13,6 +13,7 @@ const Navbar = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const {isDarkMode} = useSelector((state)=> state.ui)
+    const [toggleClass, setToggleClass] = useState(true)
 
     const handleLogout = () =>{
         dispatch(startLogout())
@@ -20,13 +21,22 @@ const Navbar = () => {
         dispatch(savingCleaningLogout());
     }
 
+    const prueba = ()=>{
+       // navigate("/home")
+        console.log("click");
+        // const element = document.getElementById("nav_bar_container");
+        // element.classList.toggle("mostrar")
+        setToggleClass((el)=>!el)
+        console.log(toggleClass);
+    }
+
 
     return (
         <>
-            <div className={styles.nabvar_contianer}>
+            <div   className={`${styles.nabvar_contianer}` }>
             {/* <DarkMode/> */}
-                <img onClick={()=>navigate("/home")} src={ (isDarkMode) ? appImages("./LogoBlanco.png") : appImages("./LogoMorado.png")} alt="" />
-                <nav className={styles.navbar}>
+                <img onClick={prueba} src={ (isDarkMode) ? appImages("./LogoBlanco.png") : appImages("./LogoMorado.png")} alt="" />
+                <nav className={toggleClass ? `${styles.navbar} ${styles.toggle_class}`:`${styles.navbar}`}>
                     <ul>
                         <li><NavLink className={(data)=> data.isActive ? styles.active: styles.no_active} to="/home">Inicio</NavLink></li>
                         <li><NavLink className={(data)=> data.isActive ? styles.active: styles.no_active} to="/spend">Gastos</NavLink></li>

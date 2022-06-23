@@ -98,11 +98,11 @@ const ToDoItemsList = () => {
                             paginated?.map((todo)=>{
                                 return(
                                     <tr className={ todo.done ?  `${styles.body_row} ${styles.body_row_complete}`: styles.body_row } key={todo.id}>
-                                        <td data-label="Titulo">{todo.title}</td>
+                                        <td  className={styles.title}>{todo.title}</td>
                                         <td data-label="Descripción"><p className={styles.description}>{todo.description}</p></td>
                                         <td data-label="Fecha creación" className={styles.fecha}>{todo.date}</td>
                                         <td data-label="Fecha limite" className={styles.fecha}>{todo.dateLimit}</td>
-                                        <td data-label="Genera" className={styles.select}>{(todo.hasAlert === "1") ? "Si": "No"}</td>
+                                        <td data-label="Genera alerta" className={styles.select}>{(todo.hasAlert === "1") ? "Si": "No"}</td>
                                         <td data-label="Estado" ref={refButton}>{todo.done ? <TiInputChecked onClick={()=>changeStatusTask(todo.id)} className={styles.btn_terminado}/> : <TiDelete onClick={()=>changeStatusTask(todo.id)}className={styles.btn_terminado_done}/>}</td>
                                         <td data-label="Editar"><button><FaRegEdit onClick={()=>handleEdit(todo.id)} className={todo.done ? `${styles.icono_editar} ${styles.icono_editar_block}`: styles.icono_editar}/></button></td>
                                         <td data-label="Eliminar"><button><MdDelete className={styles.icono_eliminar} onClick={()=>handleDelete(todo.id)}/></button></td>

@@ -1,7 +1,7 @@
 @import url("Const.css");
 
 .main_container{
-    background: red;
+    /* background: red; */
     min-height: 40vh;
     display: flex;
     flex-direction: column;
@@ -11,7 +11,7 @@
 
 .contacto_container{
     background: var(--gradient);
-    background: purple;
+    /* background: purple; */
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -24,6 +24,7 @@
     font-size: var(--h3-font-size);
     color: #fff;
     margin: 80px;
+    text-align: center;
 
 }
 
@@ -34,7 +35,7 @@
 .icons_info{
     display: flex;
     flex-wrap: wrap;
-    background: yellow;
+    /* background: yellow; */
     gap: 20px;
     /* height: 30vh; */
     width: 70%;
@@ -44,7 +45,7 @@
 }
 
 .icons_info>div{
-    background: green;
+    /* background: green; */
     width: 33%;
     display: flex;
     flex-direction: column;
@@ -169,3 +170,17 @@
         background-color: var(--color-verde-oscuro);
         transform: translateY(-5px);
     }
+
+@media(max-width:500px){
+
+    .icons_info>div{
+        border-right: none;
+
+    }
+    
+    .contact_icon{
+        height: 30px;
+        width: 30px;
+    }
+    
+}

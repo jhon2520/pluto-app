@@ -3,17 +3,17 @@
 
 
 .main_container{
-    background: red;
+    /* background: red */
     display: flex;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap-reverse;
     gap: 10px;
-    min-height: 88vh;
+    min-height: 92vh;
 }
 .text_container{
     background: rgba(75, 21, 190, 0.057);
-    background: yellow;
+    /* background: yellow; */
     height: 60%;
     width: 40%;
     display: flex;
@@ -50,7 +50,7 @@
 .img_container{
     height: 60%;
     width: 40%;
-    background: green;
+    /* background: green; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -89,4 +89,12 @@
     margin: auto;
     margin-top: 0px;
     border: var(--horizontal)
+}
+
+@media(max-width:500px){
+
+    .text_container{
+        margin-bottom: 15px;
+    }
+
 }

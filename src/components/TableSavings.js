@@ -9,7 +9,7 @@ import { useDispatch,useSelector } from 'react-redux'
 import questionMessage from '../helpers/questionMessage'
 import successMessage from '../helpers/successMessage'
 import { startDeletingSaving } from '../actions/savings.actions'
-import { setTotalSave, startSettingMostValueSaved, startSettingDataSave } from '../actions/data.action'
+import { startSettingDataSave } from '../actions/data.action'
 
 
 

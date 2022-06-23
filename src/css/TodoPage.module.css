@@ -127,25 +127,23 @@
         background: rgba(102, 102, 102, 0.07);
         
     }
-
-        
-
+    
     .body_row>th,.body_row>td:first-child{
         font-weight: 800;
     }
 
     .body_row>td>button{
         background: none;
-        height: 80%;
-        width: 80px;
+        height: 60px;
+        width: 60px;
         border: none;
     }
 
     .body_row>td>button>.icono_editar,
     .body_row>td>button>.icono_eliminar{
-        height: 60%;
-        width: 60%;
-        padding: 10px;
+        height: 45px;
+        width: 45px;
+        padding: 5px;
         border-radius: 5%;
         transition: 0.3s ease-in-out;
     }
@@ -158,8 +156,8 @@
 
     .body_row>td>.btn_terminado{
         border-radius: 50%;
-        height: 50px;
-        width: 50px;
+        height: 60px;
+        width: 60px;
         color: var(--color-ok);
         transition: 0.3s ease-in-out;
     }
@@ -255,7 +253,7 @@
 @media(max-width:500px){
 
     .table{
-        /* background: red; */
+    
         display: flex;
         align-items: center;
         justify-content: center;
@@ -271,7 +269,9 @@
         min-width: 80vw;
         max-height: 20vh;
         min-height: 430px;
-        border: 1px solid #fff;
+        border: 1px solid var(--color-font);
+        border-radius: 20px;
+        background: var(--neg-background);
 
     }
 
@@ -291,28 +291,88 @@
         margin-bottom: 15px;
     }
     .body_row,.body_row_complete,.body_row>td,.body_row_complete>td{
-        text-align: right;
+        text-align: end;
         position: relative;
+        max-height: 80px;
+        overflow: hidden;
+        background: var(--neg-background);
+
     }
     .body_row::before,.body_row_complete::before{
         content: attr(data-label);
         position: absolute;
         left: 0;
         width: 50%;
+
+
     }
 
     .body_row{
-        max-height: 150px;
-        height: 150px;
+        max-height: 200px;
+        height: 190px;
         max-width: 60px;
+        background: var(--neg-background);
+
     }
     .description{
         display: inline-block;
         text-align: right;
         width: 120px;
-        text-align: center;
-        background: red;
+        /* background: red; */
         max-width: 100px;
         
     }
+    .body_row>th,.body_row>td:first-child{
+        background: rgba(255, 255, 255, 0.25);
+        padding: 0;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.9rem;
+    }
+
+    .body_row>.title{
+        display:block;
+        max-width: 100%;
+        width: 300px;
+        text-align: left;
+        overflow: hidden;
+    }
+    .body_row>td>button>.icono_editar,
+    .body_row>td>button>.icono_eliminar{
+        height: 35px;
+        width: 35px;
+    }
+    .body_row>td>.btn_terminado,.body_row>td>.btn_terminado_done,.body_row{
+        height: 50px;
+        width: 50px;
+        margin-right: 5px;
+    }
+    .add_new_todo_btn{
+
+        width: 30px;
+        height: 30px;
+        border: 1px solid #fff;
+        bottom: 25px;
+        right: 25px;
+        background: #fff;
+    }
+    .table>thead>tr>th,.body_row>th,.body_row>td,.description{
+        color: var(--neg-color-font);
+        font-weight: 700;
+    }
+    .table>tbody>tr>td:nth-child(2){
+        color: var(--neg-color-font);
+        font-weight: 700;
+    }
+    .body_row>th,.body_row>td:hover{
+        background: var(--neg-background);
+    }
+    .body_row_complete{
+        text-decoration: none;
+        
+    }
+
+
 }

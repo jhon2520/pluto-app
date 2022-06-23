@@ -131,3 +131,11 @@ body.dark{
     transform: rotate(225deg)
 }
 
+@media(max-width:500px){
+
+    .dark_container{
+        /* background: green; */
+        padding: 15px;
+    }
+
+}

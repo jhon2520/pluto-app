@@ -1,7 +1,7 @@
 @import url("Const.css");
 
 .btn_container{
-    background: red;
+    /* background: red; */
     margin-top: 40px;
     display: flex;
     align-items: center;
